@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField]private float x_axis, z_axis;
     public static float direction;
     private Rigidbody rg;
+    [SerializeField] ManagerJoystick manager_Joystick;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -23,8 +24,8 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        //x_axis = Input.GetAxis("Mouse X");
-        //z_axis = Input.GetAxis("Mouse Y");
+        x_axis = manager_Joystick.InputHorizontal();
+        z_axis = manager_Joystick.InputVertical();
         if (x_axis != 0 || z_axis !=0)
         {
             Change_Pos(x_axis, z_axis);

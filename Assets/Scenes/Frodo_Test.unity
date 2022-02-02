@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 842397002}
   - component: {fileID: 842397007}
   - component: {fileID: 842397006}
+  - component: {fileID: 842397008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -295,7 +296,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842397001}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &842397005
 Transform:
   m_ObjectHideFlags: 0
@@ -342,6 +343,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &842397008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842397001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a09d8fb2829ef04e9ead0f367ce1818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  managerJoystick: {fileID: 628312197}
 --- !u!1 &1455709613
 GameObject:
   m_ObjectHideFlags: 0

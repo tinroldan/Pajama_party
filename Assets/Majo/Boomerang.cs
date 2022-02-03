@@ -9,7 +9,7 @@ public class Boomerang : MonoBehaviour
     Vector3 shootPos;
     [SerializeField]Transform originalPos, maxPos;
     Transform pos ;
-    bool returnB=false;
+    bool returnB=false, shooted=false;
     
 
     private void Awake() {
@@ -20,28 +20,23 @@ public class Boomerang : MonoBehaviour
     }
     void Start()
     {
-        
-        shoot();
-        
+       
     }
 
    
     void Update() {
-
-        GoandReturn();
-      
-
-
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            shoot();
+        }
+        if(shooted ==true) GoandReturn();
     }
    
 
     void shoot() {
-
-      
         pos.SetParent(null, true);
         shootPos=transform.position;
         rb.AddForce(transform.forward * speed);
-
+        shooted = true;
     }
 
     void GoandReturn() {
@@ -49,7 +44,6 @@ public class Boomerang : MonoBehaviour
         if (returnB==false && Vector3.Distance(maxPos.position,transform.position) <= 10 ) {
             //rb.AddForce(-transform.forward * speed);
             rb.velocity = Vector3.zero;          
-            Debug.Log("A");
             returnB = true;
         } else if (returnB) {
             Follow();
@@ -60,10 +54,8 @@ public class Boomerang : MonoBehaviour
     }
     void Follow() {
         Vector3 dir = originalPos.position-transform.position;
-        
-        Debug.Log(dir);
         // transform.position += (transform.position - originalPos * -speed) * Time.deltaTime;
-        rb.MovePosition(transform.position + (dir *speed* Time.deltaTime));
+        rb.MovePosition(transform.position + (dir *10* Time.deltaTime));
        
        // rb.AddForce (dir * speed* Time.deltaTime);
     }

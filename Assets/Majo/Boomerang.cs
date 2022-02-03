@@ -6,7 +6,7 @@ public class Boomerang : MonoBehaviour
 {
     [SerializeField] float speed = 5;
     Rigidbody rb;
-    Vector3 shootPos;
+    Vector3 shootPos,dir;
     [SerializeField]Transform originalPos, maxPos;
     Transform pos ;
     bool returnB=false, shooted=false;
@@ -48,16 +48,20 @@ public class Boomerang : MonoBehaviour
         } else if (returnB) {
             Follow();
         }
-        if (transform.position.z <= shootPos.z) {
-           // rb.velocity = Vector3.zero;
-        }
+        
     }
     void Follow() {
-        Vector3 dir = originalPos.position-transform.position;
+        dir = originalPos.position-transform.position;
+        Debug.Log(dir.magnitude);
         // transform.position += (transform.position - originalPos * -speed) * Time.deltaTime;
         rb.MovePosition(transform.position + (dir *10* Time.deltaTime));
-       
-       // rb.AddForce (dir * speed* Time.deltaTime);
+        if (dir.magnitude <= 0.1f) {
+            Debug.Log("Hola");
+            rb.velocity = Vector3.zero;
+            shooted = false;
+            returnB = false;
+        }
+        //< >
     }
 
 

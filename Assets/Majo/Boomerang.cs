@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Boomerang : MonoBehaviour
 {
-    [SerializeField] float speed = 5, distance=10;
+    [SerializeField] float speed = 5;
     Rigidbody rb;
     Vector3 shootPos;
-    Transform pos;
+    [SerializeField]Transform originalPos, maxPos;
+    Transform pos ;
+    bool returnB=false;
     
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         pos = GetComponentInParent<Transform>();
+       // originalPos = GetComponentInParent<Transform>().position;
+       
     }
     void Start()
     {
@@ -29,25 +33,39 @@ public class Boomerang : MonoBehaviour
 
 
     }
-    void GetPos() {
-       shootPos = transform.position;
-    }
+   
 
     void shoot() {
+
+      
         pos.SetParent(null, true);
-        GetPos();
+        shootPos=transform.position;
         rb.AddForce(transform.forward * speed);
 
     }
 
     void GoandReturn() {
-        if (Vector3.Distance(shootPos, transform.position) >= distance) {
+       
+        if (returnB==false && Vector3.Distance(maxPos.position,transform.position) <= 10 ) {
             //rb.AddForce(-transform.forward * speed);
-            rb.velocity = -rb.velocity;
+            rb.velocity = Vector3.zero;          
+            Debug.Log("A");
+            returnB = true;
+        } else if (returnB) {
+            Follow();
         }
         if (transform.position.z <= shootPos.z) {
-            rb.velocity = Vector3.zero;
+           // rb.velocity = Vector3.zero;
         }
+    }
+    void Follow() {
+        Vector3 dir = originalPos.position-transform.position;
+        
+        Debug.Log(dir);
+        // transform.position += (transform.position - originalPos * -speed) * Time.deltaTime;
+        rb.MovePosition(transform.position + (dir *speed* Time.deltaTime));
+       
+       // rb.AddForce (dir * speed* Time.deltaTime);
     }
 
 

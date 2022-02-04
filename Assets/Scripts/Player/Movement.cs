@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 {
     public static Action A_Move;
     [Header("Variables Movimiento")]
-    [SerializeField] private float speed;
+    [SerializeField] private float speed, max_speed;
     [Range(-1,1)]
     [SerializeField]private float x_axis, z_axis;
     public static float direction;
@@ -30,11 +30,17 @@ public class Movement : MonoBehaviour
         {
             Change_Pos(x_axis, z_axis);
         }
+        float capped_X_velocity = Mathf.Min(Mathf.Abs(rg.velocity.x), max_speed) * Mathf.Sign(rg.velocity.x);
+        float capped_z_velocity = Mathf.Min(Mathf.Abs(rg.velocity.z), max_speed) * Mathf.Sign(rg.velocity.z);
+
+        rg.velocity = new Vector3(capped_X_velocity, rg.velocity.y, capped_z_velocity);
+        Debug.Log(rg.velocity);
     }
     public void Change_Pos(float x, float z)
     {
         Vector3 force = new Vector3(x, 0, z);
-        rg.AddForce(force*speed);
+        rg.AddForce(force*speed,ForceMode.Impulse);
+
         A_Move?.Invoke();
     }
 }

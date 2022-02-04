@@ -26,7 +26,6 @@ public class Dash : MonoBehaviour
         {
             StartCoroutine(Dash_coroutine());
         }
-        Debug.Log(rg.velocity);
     }
     IEnumerator Dash_coroutine()
     {

@@ -9,10 +9,9 @@ public class Movement : MonoBehaviour
 {
     public static Action A_Move;
     [Header("Variables Movimiento")]
-    [SerializeField] private float speed, max_speed;
+    [SerializeField] public float speed, max_speed;
     [Range(-1,1)]
     [SerializeField]private float x_axis, z_axis;
-    public static float direction;
     private Rigidbody rg;
     [SerializeField] ManagerJoystick manager_Joystick;
     // Start is called before the first frame update

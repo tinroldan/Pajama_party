@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Boomerang : MonoBehaviour
 {
-    [SerializeField] float speed = 5;
+    [SerializeField] float speed = 5, distance=10;
     Rigidbody rb;
     Vector3 shootPos,dir;
-    [SerializeField]Transform originalPos, maxPos;
+    [SerializeField]Transform originalPos;
    
     bool returnB=false, shooted=false;
     
@@ -15,16 +15,14 @@ public class Boomerang : MonoBehaviour
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         
-       // originalPos = GetComponentInParent<Transform>().position;
        
     }
-    void Start()
-    {
-       
+    private void FixedUpdate() {
+        Turn();
     }
 
-   
     void Update() {
+        
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
             shoot();
         }
@@ -33,18 +31,17 @@ public class Boomerang : MonoBehaviour
    
 
     void shoot() {
-        transform.SetParent(null, true);
-        shootPos=transform.position;
+        transform.SetParent(null, true);       
+        shootPos =transform.position;
         rb.AddForce(transform.forward * speed);
         shooted = true;
         returnB = false;
     }
 
     void GoandReturn() {
-       
-        if (returnB==false && Vector3.Distance(maxPos.position,transform.position) <= 10 ) {
-            //rb.AddForce(-transform.forward * speed);
-            rb.velocity = Vector3.zero;          
+        Turn();
+        if (returnB==false && Vector3.Distance(transform.position,shootPos) >= distance ) {
+          rb.velocity = Vector3.zero;          
             returnB = true;
         } else if (returnB) {
             Follow();
@@ -53,11 +50,8 @@ public class Boomerang : MonoBehaviour
     }
     void Follow() {
         dir = originalPos.position-transform.position;
-        Debug.Log(dir.magnitude);
-        // transform.position += (transform.position - originalPos * -speed) * Time.deltaTime;
         rb.MovePosition(transform.position + (dir *20* Time.deltaTime));
-        if (dir.magnitude <= 0.1f) {
-            Debug.Log("Hola");
+        if (dir.magnitude <= 0.1f) {          
             rb.velocity = Vector3.zero;
             shooted = false;
             returnB = false;
@@ -65,6 +59,10 @@ public class Boomerang : MonoBehaviour
         }
         
     }
+     void Turn() {
+        //rb.AddTorque(Vector3.up);
+       // rb.angularVelocity = new Vector3(0, 7, 0);
+     }
 
 
 

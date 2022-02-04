@@ -21,16 +21,13 @@ public class Boomerang : MonoBehaviour
         Turn();
     }
 
-    void Update() {
-        
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            shoot();
-        }
+    void Update() {        
+       
         if(shooted ==true) GoandReturn();
     }
    
 
-    void shoot() {
+    public void shoot() {
         transform.SetParent(null, true);       
         shootPos =transform.position;
         rb.AddForce(transform.forward * speed);

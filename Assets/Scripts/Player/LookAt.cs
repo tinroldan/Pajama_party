@@ -21,7 +21,7 @@ public class LookAt : MonoBehaviour
         if (direction!= Vector2.zero)
         {
             float angle = Mathf.Atan2(direction.y - Vector2.zero.y, direction.x - Vector2.zero.x);
-            player.rotation = Quaternion.Euler(0f, angle*Mathf.Rad2Deg, 0f);
+            player.rotation = Quaternion.Euler(0f, 90- angle*Mathf.Rad2Deg, 0f);
         }
     }
 }

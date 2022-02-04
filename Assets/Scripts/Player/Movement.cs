@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour
         float capped_z_velocity = Mathf.Min(Mathf.Abs(rg.velocity.z), max_speed) * Mathf.Sign(rg.velocity.z);
 
         rg.velocity = new Vector3(capped_X_velocity, rg.velocity.y, capped_z_velocity);
-        Debug.Log(rg.velocity);
     }
     public void Change_Pos(float x, float z)
     {

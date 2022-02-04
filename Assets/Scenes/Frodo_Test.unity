@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 842397007}
   - component: {fileID: 842397006}
   - component: {fileID: 842397008}
+  - component: {fileID: 842397009}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -324,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  max_speed: 1
+  max_speed: 3
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 628312197}
@@ -357,6 +358,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managerJoystick: {fileID: 628312197}
+--- !u!114 &842397009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842397001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b1d1b785fe9a64bb017cb91277e5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dash_time: 0.5
+  dash_speed: 15
+  initial_speed: 0
 --- !u!1 &1455709613
 GameObject:
   m_ObjectHideFlags: 0

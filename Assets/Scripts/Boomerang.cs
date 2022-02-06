@@ -14,7 +14,7 @@ public class Boomerang : MonoBehaviour
     bool returnB=false, shooted=false;
     
 
-    private void Awake() {
+    private void Start() {
         myPlayer = GetComponentInParent<PlayerBoomerang>();
         rb = GetComponent<Rigidbody>();
         myPlayer.Shooted += GetShoot;

@@ -15,18 +15,23 @@ public class Boomerang : MonoBehaviour
     
 
     private void Start() {
+       
         myPlayer = GetComponentInParent<PlayerBoomerang>();
         rb = GetComponent<Rigidbody>();
         myPlayer.Shooted += GetShoot;
         gameObject.SetActive(false);
+        myPlayer.Shooted += machetazo;
         
        
     }
 
 
-    void Update() {        
-       
-        if(shooted ==true) GoandReturn();
+    void machetazo() {
+        StartCoroutine(GoAndReturn());
+    }
+    void otromachete() {
+        Debug.Log("esoy en machete");
+        StartCoroutine(Follow());
     }
     
     void GetShoot() {
@@ -42,28 +47,40 @@ public class Boomerang : MonoBehaviour
     //    returnB = false;  PONER CUIDADO, POSIBLE CAUSA DE BUG!!!!!! MIRAR SHOOT EN PLAYERBOOMERANG
     //}
 
-    void GoandReturn() {
-        Turn();
-        if (returnB==false && Vector3.Distance(transform.position,shootPos) >= distance ) {
-          rb.velocity = Vector3.zero;          
-            returnB = true;
-        } else if (returnB) {
-            Follow();
+     IEnumerator GoAndReturn() {
+
+        int t = 0;
+        while (t <= 50) {
+            t++;
+            if (returnB == false && Vector3.Distance(transform.position, shootPos) >= distance) {
+                rb.velocity = Vector3.zero;
+                Debug.Log("Hola soy yo");
+                StartCoroutine(Follow());
+                returnB = true;
+                break;
+                
+            } else if (returnB) {
+                
+            }
+            yield return new WaitForSeconds(0.2f);
+
         }
-        
     }
-    void Follow() {
-        dir = originalPos.position-transform.position;
-        rb.MovePosition(transform.position + (dir *20* Time.deltaTime));
-        if (dir.magnitude <= 0.1f) {          
-            //rb.velocity = Vector3.zero;
-            //shooted = false;
-            //returnB = false;
-            //transform.SetParent(originalPos,true);
-            //gameObject.SetActive(false);
+   
+    IEnumerator Follow() {
+        Debug.Log("Estoy siguiendo");
+        returnB = true;
+        int t = 0;       
+        while (t <= 20000) {
+            t++;
+            dir = originalPos.position - transform.position;
+            rb.MovePosition(transform.position + (dir * 40 * Time.deltaTime));
+            yield return new WaitForSeconds(0.001f);
+
         }
-        
+
     }
+
 
     private void OnCollisionEnter(Collision collision) {
         if(returnB == true && collision.gameObject == myPlayer.gameObject) {
@@ -72,13 +89,40 @@ public class Boomerang : MonoBehaviour
             returnB = false;
             transform.SetParent(originalPos, true);
             gameObject.SetActive(false);
+        } else if (collision.gameObject != myPlayer.gameObject){
+            StopCoroutine(GoAndReturn());
+            Debug.Log("Me choqué contra algo");          
+            rb.velocity = Vector3.Reflect(rb.velocity,collision.GetContact(0).normal);
+            Invoke("otromachete", 0.5f);
+           
         }
     }
     void Turn() {
-        //rb.AddTorque(Vector3.up);
+       // rb.AddTorque(Vector3.up);
        // rb.angularVelocity = new Vector3(0, 7, 0);
      }
 
+    //void GoandReturn() {
+    //    Turn();
+    //    if (returnB==false && Vector3.Distance(transform.position,shootPos) >= distance ) {
+    //      rb.velocity = Vector3.zero;          
+    //        returnB = true;
+    //    } else if (returnB) {
+    //        Follow();
+    //    }
 
+    //}
+    //void Follow() {
+    //    dir = originalPos.position-transform.position;
+    //    rb.MovePosition(transform.position + (dir *20* Time.deltaTime));
+    //    if (dir.magnitude <= 0.1f) {          
+    //        //rb.velocity = Vector3.zero;
+    //        //shooted = false;
+    //        //returnB = false;
+    //        //transform.SetParent(originalPos,true);
+    //        //gameObject.SetActive(false);
+    //    }
+
+    //}
 
 }

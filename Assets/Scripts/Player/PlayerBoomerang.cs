@@ -11,6 +11,7 @@ public class PlayerBoomerang : MonoBehaviour
     Boomerang myBoomerang;
     private void Awake() {
         myBoomerang = GetComponentInChildren<Boomerang>();
+       
     }
     void Start()
     {
@@ -22,13 +23,23 @@ public class PlayerBoomerang : MonoBehaviour
     {
         
     }
+   
     public void shoot() {
         myBoomerang.transform.position = myBoomerang.originalPos.position;
         myBoomerang.gameObject.SetActive(true);
         myBoomerang.transform.SetParent(null, true);
         myBoomerang.shootPos = transform.position;
         myBoomerang.rb.AddForce(transform.forward * speed);
-        if (Shooted != null) Shooted();
+        if (Shooted != null)Shooted();
         
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if( collision.gameObject != myBoomerang.gameObject &&collision.gameObject.CompareTag("Boomerang")) {
+            gameObject.SetActive(false);
+            Invoke("Reapear", 5);
+        }
+    }
+    void Reapear() {
+        gameObject.SetActive(true);
     }
 }

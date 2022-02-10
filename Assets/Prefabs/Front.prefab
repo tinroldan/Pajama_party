@@ -103,6 +103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3217569145847903335}
     m_Modifications:
+    - target: {fileID: 6968302699580681547, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
+      propertyPath: m_TagString
+      value: Boomerang
+      objectReference: {fileID: 0}
     - target: {fileID: 6968302700061438328, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
       propertyPath: m_Name
       value: OriginBoomerang

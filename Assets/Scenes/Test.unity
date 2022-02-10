@@ -685,7 +685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28.538055, y: 37.138054}
+  m_AnchoredPosition: {x: 28.538055, y: 60}
   m_SizeDelta: {x: 88.9239, y: 88.9239}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &590310886
@@ -883,6 +883,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6968302699580681547, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
+      propertyPath: m_TagString
+      value: Boomerang
+      objectReference: {fileID: 0}
     - target: {fileID: 6968302700061438328, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
       propertyPath: m_Name
       value: OriginBoomerang
@@ -1076,7 +1080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198984125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.61, y: 0.785, z: 6.54}
+  m_LocalPosition: {x: -23.08, y: 0.785, z: 7.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 451722763}
@@ -1121,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ab2309a23f8b44c9bd1173521c1a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 521372981}
@@ -1882,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6968302699580681547, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
+      propertyPath: m_TagString
+      value: Boomerang
+      objectReference: {fileID: 0}
     - target: {fileID: 6968302700061438328, guid: 8a5e4e78f0ae0b24093e91da13f33349, type: 3}
       propertyPath: m_Name
       value: OriginBoomerang
@@ -2577,7 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ab2309a23f8b44c9bd1173521c1a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 5910869421404617572}
@@ -2660,7 +2668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -259.53802, y: 37.138054}
+  m_AnchoredPosition: {x: -259.53802, y: 60}
   m_SizeDelta: {x: 88.92395, y: 88.9239}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &5910869421404617572

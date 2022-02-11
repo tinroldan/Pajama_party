@@ -11,14 +11,13 @@ public class Boomerang : MonoBehaviour
     [SerializeField] public Transform originalPos;
     PlayerBoomerang myPlayer;
    
-    bool returnB=false, shooted=false;
+    bool returnB=false;
     
 
     private void Start() {
        
         myPlayer = GetComponentInParent<PlayerBoomerang>();
         rb = GetComponent<Rigidbody>();
-        myPlayer.Shooted += GetShoot;
         gameObject.SetActive(false);
         myPlayer.Shooted += machetazo;
         
@@ -34,9 +33,7 @@ public class Boomerang : MonoBehaviour
         StartCoroutine(Follow());
     }
     
-    void GetShoot() {
-        shooted = true;
-    }
+   
    
 
     //public void shoot() {
@@ -59,9 +56,7 @@ public class Boomerang : MonoBehaviour
                 returnB = true;
                 break;
                 
-            } else if (returnB) {
-                
-            }
+            } 
             yield return new WaitForSeconds(0.2f);
 
         }
@@ -71,7 +66,7 @@ public class Boomerang : MonoBehaviour
         Debug.Log("Estoy siguiendo");
         returnB = true;
         int t = 0;       
-        while (t <= 20000) {
+        while (t <= 2000) {
             t++;
             dir = originalPos.position - transform.position;
             rb.MovePosition(transform.position + (dir * 40 * Time.deltaTime));
@@ -84,11 +79,13 @@ public class Boomerang : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         if(returnB == true && collision.gameObject == myPlayer.gameObject) {
-            rb.velocity = Vector3.zero;
-            shooted = false;
+            StopAllCoroutines();
+            rb.velocity = Vector3.zero;            
             returnB = false;
-            transform.SetParent(originalPos, true);
+            transform.SetParent(originalPos,true);
             gameObject.SetActive(false);
+            myPlayer.myBoomerang = this;
+
         } else if (collision.gameObject != myPlayer.gameObject){
             StopCoroutine(GoAndReturn());
             Debug.Log("Me choqué contra algo");          

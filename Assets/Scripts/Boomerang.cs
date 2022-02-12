@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boomerang : MonoBehaviour
 {
-    [SerializeField] float speed = 5, distance=10;
+    [SerializeField] float  distance=10;
     public Rigidbody rb;
     public Vector3 shootPos;
     Vector3 dir;
@@ -20,11 +20,8 @@ public class Boomerang : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         gameObject.SetActive(false);
         myPlayer.Shooted += machetazo;
-        
-       
+         
     }
-
-
     void machetazo() {
         StartCoroutine(GoAndReturn());
     }
@@ -33,9 +30,6 @@ public class Boomerang : MonoBehaviour
         StartCoroutine(Follow());
     }
     
-   
-   
-
     //public void shoot() {
     //    transform.SetParent(null, true);       
     //    shootPos =transform.position;
@@ -75,7 +69,6 @@ public class Boomerang : MonoBehaviour
         }
 
     }
-
 
     private void OnCollisionEnter(Collision collision) {
         if(returnB == true && collision.gameObject == myPlayer.gameObject) {

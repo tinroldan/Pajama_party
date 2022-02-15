@@ -40,8 +40,10 @@ public class Test_boomerang : MonoBehaviour
                 speed += 0.1f;
             }if(distance <= 2) {
                 PickUp();
+                return;
             }
             transform.LookAt(target);
+            print("estoy mirando");
         }
        
     }
@@ -55,9 +57,10 @@ public class Test_boomerang : MonoBehaviour
         back = true;
     }
     void PickUp() {
+        back = false;
         transform.SetParent(spawn);
         gameObject.transform.eulerAngles =Vector3.zero;
-        transform.position = spawn.position;
+        transform.localPosition = spawn.position;
         gameObject.SetActive(false);
     }
 

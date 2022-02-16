@@ -19,7 +19,7 @@ public class Player2_Boomerang : MonoBehaviour {
         //    myBoomerang = null;
         //}
         myBoomerang.gameObject.SetActive(true);
-
+        
         myBoomerang.Throw();
     }
    

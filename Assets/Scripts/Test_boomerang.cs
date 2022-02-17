@@ -6,7 +6,7 @@ public class Test_boomerang : MonoBehaviour {
     [SerializeField] float speed, inicialSpeed;
     public Rigidbody rb;
     public Transform target, spawn;
-
+    float time;
 
     bool back, shooted, reflect;
     [SerializeField] float speedRotation;
@@ -44,12 +44,23 @@ public class Test_boomerang : MonoBehaviour {
                 PickUp();
                 return;
             }
-            //transform.LookAt(target);
-            print("moiro");
+            if (reflect) {
+                time += Time.deltaTime;
+                if (time >= 0.5f) {
+                    reflect = false;
+                    time = 0;
+                }
+                return;
+            }
+
+            transform.LookAt(target);
         }
 
     }
 
+   
+
+   
     public void Throw() {
         back = false;
         shooted = true;
@@ -68,19 +79,14 @@ public class Test_boomerang : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         back = true;
         reflect = true;
-        print(transform.eulerAngles.y);
 
         if ( transform.eulerAngles.y < 15 || transform.eulerAngles.y >315 || (transform.eulerAngles.y >=135 && 
             transform.eulerAngles.y <=225)) {
             transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y+ 180, 0);
-            print("MAYOR 360 :" );
 
         } else {
             transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
-            print("MENOR :");
-
         }
-        print("dESPUES :" +transform.eulerAngles.y);
 
 
 

@@ -6,13 +6,11 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     [SerializeField] private float dash_time, dash_speed, initial_speed;
-    Rigidbody rg;
     Transform player;
     Movement mov;
 
     private void Start()
     {
-        rg = GetComponent<Rigidbody>();
         player = GetComponent<Transform>();
         mov = GetComponent<Movement>();
     }
@@ -34,7 +32,7 @@ public class Dash : MonoBehaviour
         mov.max_speed = dash_speed;
         while (Time.time < start_time + dash_time)
         {
-            rg.AddForce( player.forward * dash_speed);
+            player.position += player.forward * dash_speed*Time.deltaTime;
             yield return null;
         }
         mov.max_speed = initial_speed;

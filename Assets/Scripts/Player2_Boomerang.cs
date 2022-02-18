@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Player2_Boomerang : MonoBehaviour {
-    public float force;
+    
     [SerializeField] public Test_boomerang myBoomerang;
     Rigidbody rbBoomerang;
     // Start is called before the first frame update

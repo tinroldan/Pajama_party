@@ -8,14 +8,15 @@ public class Test_boomerang : MonoBehaviour {
     public Transform target, spawn;
     float time;
 
-    bool back, shooted, reflect;
-    [SerializeField] float speedRotation;
+    bool back, shooted, reflect=false;
+    
     float distance;
     // Start is called before the first frame update
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         inicialSpeed = speed;
+        gameObject.SetActive(false);
     }
 
 
@@ -26,11 +27,16 @@ public class Test_boomerang : MonoBehaviour {
 
         if (shooted) {
             distance = Vector3.Distance(target.position, transform.position);
+            //if (!reflect && !back) {
+            //    transform.eulerAngles = target.transform.localEulerAngles;
+            //    print("hotatatata");
+            //}
             transform.position += transform.forward * speed * Time.deltaTime;
-
+            print("Estpy avanzando");
+          
         }
-        if (reflect || distance > 15 && !back) {
-
+        if ((reflect || distance > 15) && !back) {
+            print("reflejo");
             if (speed <= 0) {
                 Return();
             }
@@ -39,8 +45,10 @@ public class Test_boomerang : MonoBehaviour {
         if (back) {
             if (speed < inicialSpeed) {
                 speed += 0.1f;
+                print("back");
+
             }
-            if (distance <= 2) {
+            if (distance <= 5) {
                 PickUp();
                 return;
             }
@@ -52,49 +60,49 @@ public class Test_boomerang : MonoBehaviour {
                 }
                 return;
             }
-
+            print("mirar");
             transform.LookAt(target);
         }
 
     }
-
-   
-
    
     public void Throw() {
+        transform.SetParent(null);
+        transform.eulerAngles = spawn.eulerAngles;
+        print("Angulos: " + transform.eulerAngles);
         back = false;
         shooted = true;
-        transform.SetParent(null);
     }
     void Return() {
         back = true;
     }
     void PickUp() {
+        print("recogiendo");
+        shooted = false;
         back = false;
+        reflect = false;
         transform.SetParent(spawn);
-        gameObject.transform.eulerAngles = spawn.rotation.eulerAngles;
+        gameObject.transform.eulerAngles = spawn.eulerAngles;
         transform.position = spawn.position;
         gameObject.SetActive(false);
     }
-    private void OnCollisionEnter(Collision collision) {
-        back = true;
-        reflect = true;
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject != target.gameObject) {
+            Return();
+            reflect = true;
+            print("Estoy chocando");
+            if (transform.eulerAngles.y < 15 || transform.eulerAngles.y > 315 || (transform.eulerAngles.y >= 135 &&
+                transform.eulerAngles.y <= 225)) {
+                transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
 
-        if ( transform.eulerAngles.y < 15 || transform.eulerAngles.y >315 || (transform.eulerAngles.y >=135 && 
-            transform.eulerAngles.y <=225)) {
-            transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y+ 180, 0);
+            } else {
+                transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
+            }
+            //transform.eulerAngles.y = -transform.position + 2 * Vector3.Dot( transform.position,collision.GetContact(0).normal) * collision.GetContact(0).normal;
 
-        } else {
-            transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
         }
-
-
-
-        //transform.eulerAngles.y = -transform.position + 2 * Vector3.Dot( transform.position,collision.GetContact(0).normal) * collision.GetContact(0).normal;
-
-
     }
-
+   
 
     //void LookAtPlayer() {
     //    Vector3 direction = target.position - transform.position;

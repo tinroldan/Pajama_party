@@ -13,6 +13,10 @@ public class Movement : MonoBehaviour
     [Range(-1,1)]
     [SerializeField]private float x_axis, z_axis;
     [SerializeField] ManagerJoystick manager_Joystick;
+    private float tpDistance = 5;
+    [SerializeField] private GameObject Shield;
+    [Header("VFX")]
+    [SerializeField] ParticleSystem ShieldPS;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -31,5 +35,32 @@ public class Movement : MonoBehaviour
         transform.position += force * speed*Time.deltaTime;
 
         A_Move?.Invoke();
+    }
+    public IEnumerator SpeedPowerUp()
+    {
+        speed = speed * 2;
+        yield return new WaitForSeconds(5f);
+        speed = speed / 2;
+    }
+
+    public void TeleportPowerUp()
+    {
+        transform.position += transform.forward * tpDistance;
+    }
+
+    public void ShieldPowerUp()
+    {
+        Shield.SetActive(true);
+        ShieldPS.Play();
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Boomerang")
+        {
+            Shield.SetActive(false);
+            ShieldPS.Stop();
+        }
     }
 }

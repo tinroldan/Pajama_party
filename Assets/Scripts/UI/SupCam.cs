@@ -19,9 +19,6 @@ public class SupCam : MonoBehaviour
     [Header("Variables Zoom")]
     [SerializeField] private float depth_max;
     [SerializeField] private float depth_min;
-    [Header("Variables paneaos")]
-    [SerializeField] private float angle_max;
-    [SerializeField] private float angle_min;
 
     private float camera_eulerX;
     private Vector3 camera_pos;
@@ -92,7 +89,6 @@ public class SupCam : MonoBehaviour
         float lerpPercent = Mathf.InverseLerp(0, (focus.half_X_bounds + focus.half_Z_bounds) / 2/*Grados de libertad para los jugadores, pero preferible modificar los limites del FOCUS*/, extents);
 
         float depth = Mathf.Lerp(depth_max, depth_min, lerpPercent);
-        //float angle = Mathf.Lerp(angle_max, angle_min, lerpPercent);
         float angle = 60;
 
         camera_eulerX = angle;

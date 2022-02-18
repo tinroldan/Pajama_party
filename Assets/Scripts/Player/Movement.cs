@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
     public void ShieldPowerUp()
     {
         Shield.SetActive(true);
+        ShieldPS.gameObject.SetActive(true);
         ShieldPS.Play();
         
     }

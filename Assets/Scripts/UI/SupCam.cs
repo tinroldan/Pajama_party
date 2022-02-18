@@ -84,6 +84,7 @@ public class SupCam : MonoBehaviour
             players_bounds.Encapsulate(player_pos);
         }
         average_center = (total_positions / players.Count);
+        focus.transform.position = new Vector3(average_center.x,0,average_center.z);
 
         float extents = (players_bounds.extents.x + players_bounds.extents.y);
         float lerpPercent = Mathf.InverseLerp(0, (focus.half_X_bounds + focus.half_Z_bounds) / 2/*Grados de libertad para los jugadores, pero preferible modificar los limites del FOCUS*/, extents);

@@ -825,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   half_X_bounds: 30
   half_Y_bounds: 20
-  half_Z_bounds: 5
+  half_Z_bounds: 1.8
   focusBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}

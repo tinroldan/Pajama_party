@@ -8,8 +8,10 @@ public class Test_boomerang : MonoBehaviour {
     public Transform target, spawn;
     float time;
 
-    bool back, shooted, reflect=false;
-    
+    bool back,  reflect=false;
+    public bool shooted;
+
+
     float distance;
     // Start is called before the first frame update
 

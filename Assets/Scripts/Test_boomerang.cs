@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Test_boomerang : MonoBehaviour {
-    [SerializeField] float speed, inicialSpeed;
+    [SerializeField] float speed, speedRotation;
+    float inicialSpeed;
     public Rigidbody rb;
     public Transform target, spawn;
-    float time;
-
-    bool back,  reflect=false;
+    float time, timeBack;
+    bool back, reflect = false;
     public bool shooted;
-
-
     float distance;
-    // Start is called before the first frame update
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -21,13 +19,8 @@ public class Test_boomerang : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-
-    // Update is called once per frame
     private void Update() {
-        
-
-
-        if (shooted) {
+        if (shooted) { //movimiento y distancia
             distance = Vector3.Distance(target.position, transform.position);
             //if (!reflect && !back) {
             //    transform.eulerAngles = target.transform.localEulerAngles;
@@ -35,26 +28,30 @@ public class Test_boomerang : MonoBehaviour {
             //}
             transform.position += transform.forward * speed * Time.deltaTime;
             print("Estpy avanzando");
-          
         }
-        if ((reflect || distance > 15) && !back) {
-            print("reflejo");
+        if ((reflect || distance > 15) && !back) { //Reflejo            
             if (speed <= 0) {
                 Return();
             }
             speed -= 0.1f;
         }
         if (back) {
-            if (speed < inicialSpeed) {
-                speed += 0.1f;
-                print("back");
-
+            timeBack += Time.deltaTime;
+            if (timeBack >= 2) { //Restar velocidad y quedarse quieto
+                speed -= 0.1f;
+                if (speed <= 0) {
+                    speed = 0;
+                }
+                return;
             }
-            if (distance <= 5) {
+            if (speed < inicialSpeed) { //Se devuelve
+                speed += 0.1f;
+            }
+            if (distance <= 2) {  //Recoge el boomerang
                 PickUp();
                 return;
             }
-            if (reflect) {
+            if (reflect) { // tiempo de espera antes de volver a mirar el boomerang
                 time += Time.deltaTime;
                 if (time >= 0.5f) {
                     reflect = false;
@@ -62,24 +59,24 @@ public class Test_boomerang : MonoBehaviour {
                 }
                 return;
             }
-            print("mirar");
-            transform.LookAt(target);
+            LookAtPlayer();
+            // transform.LookAt(target); // Mirar
         }
-
     }
-   
-    public void Throw() {
+
+    public void Throw() { //Lanzar boomerang
+        speed = inicialSpeed;
         transform.SetParent(null);
         transform.eulerAngles = spawn.eulerAngles;
-        print("Angulos: " + transform.eulerAngles);
+        print("Angulos: " + transform.localEulerAngles);
         back = false;
         shooted = true;
     }
     void Return() {
         back = true;
     }
-    void PickUp() {
-        print("recogiendo");
+    void PickUp() { // Recoger boomerang
+        timeBack = 0;
         shooted = false;
         back = false;
         reflect = false;
@@ -89,26 +86,25 @@ public class Test_boomerang : MonoBehaviour {
         gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject != target.gameObject) {
+        if (other.gameObject == target.gameObject && back) { // jugador recoge boomerang
+            PickUp();
+        } else if (other.gameObject != target.gameObject) { //rebote Boomerang
             Return();
             reflect = true;
             print("Estoy chocando");
-            if (transform.eulerAngles.y < 15 || transform.eulerAngles.y > 315 || (transform.eulerAngles.y >= 135 &&
+            if (transform.eulerAngles.y <= 15 || transform.eulerAngles.y >= 315 || (transform.eulerAngles.y >= 135 &&
                 transform.eulerAngles.y <= 225)) {
                 transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
-
             } else {
                 transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
             }
+            print("Angulos222: " + transform.localEulerAngles);
             //transform.eulerAngles.y = -transform.position + 2 * Vector3.Dot( transform.position,collision.GetContact(0).normal) * collision.GetContact(0).normal;
-
         }
     }
-   
-
-    //void LookAtPlayer() {
-    //    Vector3 direction = target.position - transform.position;
-    //    Quaternion toRotation = Quaternion.LookRotation( direction);
-    //    transform.rotation = Quaternion.Lerp(transform.rotation,toRotation,speedRotation*Time.deltaTime);
-    //}
+    void LookAtPlayer() {
+        Vector3 direction = target.position - transform.position;
+        Quaternion toRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speedRotation * Time.deltaTime);
+    }
 }

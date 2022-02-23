@@ -63,10 +63,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  inicialSpeed: 0
+  speedRotation: 10
   rb: {fileID: 0}
   target: {fileID: 0}
   spawn: {fileID: 6276767002846996733}
+  shooted: 0
 --- !u!135 &2875237678450887418
 SphereCollider:
   m_ObjectHideFlags: 0

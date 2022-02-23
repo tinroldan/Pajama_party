@@ -189,10 +189,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  max_speed: 4
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 628312197}
+  running: 0
 --- !u!54 &313889847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -352,10 +352,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  max_speed: 4
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 628312197}
+  running: 0
 --- !u!54 &477905369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,6 +554,8 @@ GameObject:
   - component: {fileID: 842397006}
   - component: {fileID: 842397008}
   - component: {fileID: 842397009}
+  - component: {fileID: 842397011}
+  - component: {fileID: 842397010}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -650,11 +652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ab2309a23f8b44c9bd1173521c1a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  max_speed: 4
+  speed: 7
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 628312197}
+  running: 0
 --- !u!54 &842397007
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -697,10 +699,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dash_time: 0.5
-  dash_speed: 15
+  dash_speed: 17
   initial_speed: 0
   cooldown: 4
   current_time: 0
+--- !u!114 &842397010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842397001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6868ebcc6c231814c834541921b92b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &842397011
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842397001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1209842978
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,10 +800,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  max_speed: 4
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 628312197}
+  running: 0
 --- !u!54 &1209842982
 Rigidbody:
   m_ObjectHideFlags: 0

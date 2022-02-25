@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -16,7 +17,9 @@ public class Movement : MonoBehaviour
     private float tpDistance = 5;
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
-    [SerializeField] ParticleSystem ShieldPS;
+    [SerializeField] ParticleSystem ShieldPS, teleportPS;
+    public Button TeleportButton;
+
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -46,22 +49,19 @@ public class Movement : MonoBehaviour
     public void TeleportPowerUp()
     {
         transform.position += transform.forward * tpDistance;
+        teleportPS.gameObject.SetActive(true);
+        teleportPS.Play();
     }
 
     public void ShieldPowerUp()
     {
         Shield.SetActive(true);
         ShieldPS.gameObject.SetActive(true);
-        ShieldPS.Play();
-        
+        ShieldPS.Play();    
     }
-
-    private void OnCollisionEnter(Collision collision)
+    public void StopShield()
     {
-        if(collision.gameObject.tag == "Boomerang")
-        {
-            Shield.SetActive(false);
-            ShieldPS.Stop();
-        }
+        Shield.SetActive(false);
+        ShieldPS.Stop();
     }
 }

@@ -85,19 +85,25 @@ public class Test_boomerang : MonoBehaviour {
         transform.position = spawn.position;
         gameObject.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject == target.gameObject && back) { // jugador recoge boomerang
+
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject == target.gameObject && back) { // jugador recoge boomerang
             PickUp();
-        } else if (other.gameObject != target.gameObject) { //rebote Boomerang
+        } else if (collision.gameObject != target.gameObject) { //rebote Boomerang
             Return();
             reflect = true;
-            print("Estoy chocando");
-            if (transform.eulerAngles.y <= 15 || transform.eulerAngles.y >= 315 || (transform.eulerAngles.y >= 135 &&
-                transform.eulerAngles.y <= 225)) {
-                transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
-            } else {
-                transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
-            }
+            float a = Mathf.Asin(transform.position.normalized.magnitude/ collision.GetContact(0).normal.magnitude);
+            print("Estoy chocando" + a);
+            
+            // transform.rotation= new Quaternion(0, Mathf.Asin(transform.position.magnitude / collision.GetContact(0).normal.magnitude),0,0);
+            //transform.rotation = Quaternion.Inverse(transform.rotation);
+            //if (transform.eulerAngles.y <= 15 || transform.eulerAngles.y >= 315 || (transform.eulerAngles.y >= 135 &&
+            //    transform.eulerAngles.y <= 225)) {
+            //    transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
+            //} else {
+            //    transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
+            //}
             print("Angulos222: " + transform.localEulerAngles);
             //transform.eulerAngles.y = -transform.position + 2 * Vector3.Dot( transform.position,collision.GetContact(0).normal) * collision.GetContact(0).normal;
         }

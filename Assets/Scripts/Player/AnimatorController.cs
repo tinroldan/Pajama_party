@@ -6,11 +6,14 @@ public class AnimatorController : MonoBehaviour
 {
     Animator anim;
     Movement mov;
+    [Range(0,1)]
+    [SerializeField] int animation_type;
     // Start is called before the first frame update
     void Start()
     {
         mov = GetComponent<Movement>();
         anim = GetComponent<Animator>();
+        anim.SetInteger("Animation_type", animation_type);
     }
 
     // Update is called once per frame

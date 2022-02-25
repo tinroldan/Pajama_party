@@ -19,8 +19,7 @@ public class Player2_Boomerang : MonoBehaviour {
         myBoomerang.gameObject.SetActive(true);
         myBoomerang.Throw();
     }
-    private void OnTriggerEnter(Collider other) {   //TEMPORAL
-
+    private void OnCollisionEnter(Collision collision) {
         if (other.gameObject != myBoomerang.gameObject && other.gameObject.CompareTag("Boomerang")) {
             gameObject.SetActive(false);
             score += 1;
@@ -31,7 +30,6 @@ public class Player2_Boomerang : MonoBehaviour {
             }
             Invoke("Reapear", 5);
         }
-
     }
     void Reapear() {//TEMPORAL
         gameObject.SetActive(true);

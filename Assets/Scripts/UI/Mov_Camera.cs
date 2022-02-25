@@ -26,6 +26,7 @@ public class Mov_Camera : MonoBehaviour
     }
     private void CameraCalculation()
     {
+        if (players == null || players.Count == 0) return;
         Vector3 average_center = Vector3.zero;
         Vector3 total_positions = Vector3.zero;
 

@@ -93,7 +93,9 @@ public class Test_boomerang : MonoBehaviour {
         } else if (collision.gameObject != target.gameObject) { //rebote Boomerang
             Return();
             reflect = true;
-            float a = Mathf.Asin(transform.position.normalized.magnitude/ collision.GetContact(0).normal.magnitude);
+            float a = Vector3.Angle(collision.GetContact(0).normal, transform.position);
+            // float a = Mathf.Asin( collision.GetContact(0).normal.magnitude/transform.position.magnitude );
+            
             print("Estoy chocando" + a);
             
             // transform.rotation= new Quaternion(0, Mathf.Asin(transform.position.magnitude / collision.GetContact(0).normal.magnitude),0,0);

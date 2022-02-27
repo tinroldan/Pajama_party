@@ -32,8 +32,13 @@ public class Mov_Camera : MonoBehaviour
 
         for (int i = 0; i < players.Count; i++)
         {
-            Vector3 player_pos = players[i].position;
-            total_positions += new Vector3(player_pos.x,0f,player_pos.z);
+            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
+            else
+            {
+                Vector3 player_pos = players[i].position;
+                total_positions += new Vector3(player_pos.x, 0f, player_pos.z);
+            }
+        
         }
         average_center = (total_positions / players.Count);
         camera.position = average_center;

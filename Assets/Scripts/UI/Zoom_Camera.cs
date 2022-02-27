@@ -28,14 +28,22 @@ public class Zoom_Camera : MonoBehaviour
     {
         float total_distance = 0;
         count_number = 0;
+        Vector3 player_pos = Vector3.zero;
         for (int i = 0; i < players.Count; i++)
         {
-            Vector3 player_pos = players[i].position;
+            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
+            else player_pos = players[i].position;
+
             for (int j = i + 1; j < players.Count; j++)
             {
-                Vector3 enemy_pos = players[j].position;
-                total_distance += Mathf.Abs(Vector3.Distance(enemy_pos, player_pos));
-                count_number++;
+                if (players[j].gameObject.activeSelf == false) players.Remove(players[j]);
+                else
+                {
+                    Vector3 enemy_pos = players[j].position;
+                    total_distance += Mathf.Abs(Vector3.Distance(enemy_pos, player_pos));
+                    count_number++;
+                }
+         
 
             }
         }
@@ -54,11 +62,14 @@ public class Zoom_Camera : MonoBehaviour
         float average_distance = 0;
         float total_distance = 0;
         count_number = 0;
+        Vector3 player_pos = Vector3.zero;
         for (int i = 0; i < players.Count; i++)
         {
-            Vector3 player_pos = players[i].position;
+            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
+            else player_pos = players[i].position;
             for (int j = i + 1; j < players.Count; j++)
             {
+                if (players[j].gameObject.activeSelf == false) players.Remove(players[j]);
                 Vector3 enemy_pos = players[j].position;
                 total_distance += Mathf.Abs(Vector3.Distance(enemy_pos, player_pos));
                 count_number++;
@@ -66,8 +77,8 @@ public class Zoom_Camera : MonoBehaviour
             }
         }
         average_distance = total_distance / count_number;
+        if (average_distance > max_distance) max_distance = average_distance;
         lerp_percent = average_distance / max_distance*2;
         transform.localPosition = Vector3.Lerp(zoom_pos, initial_pos, lerp_percent);
-
     }
 }

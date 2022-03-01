@@ -10,16 +10,22 @@ public class Movement : MonoBehaviour
 {
     public static Action A_Move;
     [Header("Variables Movimiento")]
-    [SerializeField] public float speed, max_speed;
+    [SerializeField] public float speed;
     [Range(-1,1)]
     [SerializeField]private float x_axis, z_axis;
     [SerializeField] ManagerJoystick manager_Joystick;
+    public bool running;
+
+    //Modificaciones Chelo
     private float tpDistance = 5;
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
     [SerializeField] ParticleSystem ShieldPS, teleportPS;
     public Button TeleportButton;
 
+    public float shieldtime = 5f;
+    public bool shieldActive = false;
+    private bool firsttime = true;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -27,13 +33,34 @@ public class Movement : MonoBehaviour
     {
         x_axis = manager_Joystick.InputHorizontal();
         z_axis = manager_Joystick.InputVertical();
-        if (x_axis != 0 || z_axis !=0)
+        if (x_axis != 0 || z_axis != 0)
         {
             Change_Pos(x_axis, z_axis);
+        }
+        else running = false;
+    }
+    private void Update()
+    {
+        Debug.Log(shieldtime);
+        if (shieldActive)
+        {
+            if (firsttime)
+            {
+                ShieldPowerUp();
+                firsttime = false;
+            }
+            shieldtime -= Time.deltaTime;
+        }
+        if (shieldtime <= 0)
+        {
+            StopShield();
+            shieldActive = false;
+            shieldtime = 5f;
         }
     }
     public void Change_Pos(float x, float z)
     {
+        running = true;
         Vector3 force = new Vector3(x, 0, z);
         transform.position += force * speed*Time.deltaTime;
 
@@ -57,7 +84,7 @@ public class Movement : MonoBehaviour
     {
         Shield.SetActive(true);
         ShieldPS.gameObject.SetActive(true);
-        ShieldPS.Play();    
+        ShieldPS.Play();
     }
     public void StopShield()
     {

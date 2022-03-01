@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -14,6 +15,17 @@ public class Movement : MonoBehaviour
     [SerializeField]private float x_axis, z_axis;
     [SerializeField] ManagerJoystick manager_Joystick;
     public bool running;
+
+    //Modificaciones Chelo
+    private float tpDistance = 5;
+    [SerializeField] private GameObject Shield;
+    [Header("VFX")]
+    [SerializeField] ParticleSystem ShieldPS, teleportPS;
+    public Button TeleportButton;
+
+    public float shieldtime = 5f;
+    public bool shieldActive = false;
+    private bool firsttime = true;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -27,6 +39,25 @@ public class Movement : MonoBehaviour
         }
         else running = false;
     }
+    private void Update()
+    {
+        Debug.Log(shieldtime);
+        if (shieldActive)
+        {
+            if (firsttime)
+            {
+                ShieldPowerUp();
+                firsttime = false;
+            }
+            shieldtime -= Time.deltaTime;
+        }
+        if (shieldtime <= 0)
+        {
+            StopShield();
+            shieldActive = false;
+            shieldtime = 5f;
+        }
+    }
     public void Change_Pos(float x, float z)
     {
         running = true;
@@ -34,5 +65,30 @@ public class Movement : MonoBehaviour
         transform.position += force * speed*Time.deltaTime;
 
         A_Move?.Invoke();
+    }
+    public IEnumerator SpeedPowerUp()
+    {
+        speed = speed * 1.5f;
+        yield return new WaitForSeconds(5f);
+        speed = speed / 1.5f;
+    }
+
+    public void TeleportPowerUp()
+    {
+        transform.position += transform.forward * tpDistance;
+        teleportPS.gameObject.SetActive(true);
+        teleportPS.Play();
+    }
+
+    public void ShieldPowerUp()
+    {
+        Shield.SetActive(true);
+        ShieldPS.gameObject.SetActive(true);
+        ShieldPS.Play();
+    }
+    public void StopShield()
+    {
+        Shield.SetActive(false);
+        ShieldPS.Stop();
     }
 }

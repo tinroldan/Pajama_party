@@ -8,12 +8,13 @@ public class AnimatorController : MonoBehaviour
     Movement mov;
     [Range(0,1)]
     [SerializeField] int animation_type;
-    public static bool death;
+    LookAt look;
     // Start is called before the first frame update
     void Start()
     {
         mov = GetComponent<Movement>();
         anim = GetComponent<Animator>();
+        look = GetComponent<LookAt>();
         anim.SetInteger("Animation_type", animation_type);
     }
 
@@ -30,8 +31,8 @@ public class AnimatorController : MonoBehaviour
     public void Die()
     {
         anim.SetTrigger("Die");
-        death = true;
-        mov.die = death;
+        mov.die = true;
+        look.death = true;
         Invoke("Disable", 2f);
     }
     void Disable()
@@ -42,8 +43,8 @@ public class AnimatorController : MonoBehaviour
     void Reapear()
     {//TEMPORAL
         gameObject.SetActive(true);
-        death = false;
-        mov.die = death;
+        mov.die = false;
+        look.death = false;
         anim.SetInteger("Animation_type", animation_type);
     }
 }

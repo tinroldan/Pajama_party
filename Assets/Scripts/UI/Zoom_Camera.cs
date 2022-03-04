@@ -12,6 +12,7 @@ public class Zoom_Camera : MonoBehaviour
     [Range(0,1)]
     float lerp_percent;
     float max_distance;
+    bool dead_player;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +32,20 @@ public class Zoom_Camera : MonoBehaviour
         Vector3 player_pos = Vector3.zero;
         for (int i = 0; i < players.Count; i++)
         {
-            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
+            if (players[i].gameObject.activeSelf == false && Mov_Camera.local== false) players.Remove(players[i]);
+            else if (players[i].gameObject.activeSelf == false && Mov_Camera.local== true)
+            {
+                total_distance += 50;
+            }
             else player_pos = players[i].position;
 
             for (int j = i + 1; j < players.Count; j++)
             {
-                if (players[j].gameObject.activeSelf == false) players.Remove(players[j]);
+                if (players[j].gameObject.activeSelf == false && Mov_Camera.local == false) players.Remove(players[j]);
+                else if (players[i].gameObject.activeSelf == false && Mov_Camera.local == true)
+                {
+                    total_distance += 50;
+                }
                 else
                 {
                     Vector3 enemy_pos = players[j].position;
@@ -65,20 +74,31 @@ public class Zoom_Camera : MonoBehaviour
         Vector3 player_pos = Vector3.zero;
         for (int i = 0; i < players.Count; i++)
         {
-            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
-            else player_pos = players[i].position;
+            if (players[i].gameObject.activeSelf == false && Mov_Camera.local == false) players.Remove(players[i]);
+            else if (players[i].gameObject.activeSelf == false && Mov_Camera.local == true) dead_player = true;
+            else
+            {
+                player_pos = players[i].position;
+                dead_player = false;
+            }
             for (int j = i + 1; j < players.Count; j++)
             {
-                if (players[j].gameObject.activeSelf == false) players.Remove(players[j]);
-                Vector3 enemy_pos = players[j].position;
-                total_distance += Mathf.Abs(Vector3.Distance(enemy_pos, player_pos));
-                count_number++;
+                if (players[j].gameObject.activeSelf == false && Mov_Camera.local == false) players.Remove(players[j]);
+                else if (players[j].gameObject.activeSelf == false && Mov_Camera.local == true) dead_player = true;
+                else
+                {
+                    Vector3 enemy_pos = players[j].position;
+                    total_distance += Mathf.Abs(Vector3.Distance(enemy_pos, player_pos));
+                    count_number++;
+                    dead_player = false;
+                }
 
             }
         }
         average_distance = total_distance / count_number;
         if (average_distance > max_distance) max_distance = average_distance;
         lerp_percent = average_distance / max_distance*2;
+        if (dead_player) lerp_percent = 1;
         transform.localPosition = Vector3.Lerp(zoom_pos, initial_pos, lerp_percent);
     }
 }

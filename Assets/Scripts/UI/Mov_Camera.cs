@@ -7,6 +7,8 @@ public class Mov_Camera : MonoBehaviour
     [Header("Jugadores")]
     [SerializeField] private List<Transform> players;
     Transform camera;
+    [SerializeField]private bool local_game;
+    public static bool local;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class Mov_Camera : MonoBehaviour
         {
             players.Add(p[i].GetComponent<Transform>());
         }
+        if (local_game) Mov_Camera.local = true;
     }
 
     // Update is called once per frame
@@ -32,7 +35,11 @@ public class Mov_Camera : MonoBehaviour
 
         for (int i = 0; i < players.Count; i++)
         {
-            if (players[i].gameObject.activeSelf == false) players.Remove(players[i]);
+            if (players[i].gameObject.activeSelf == false && local_game == false) players.Remove(players[i]);
+            else if (players[i].gameObject.activeSelf == false && local_game == true)
+            {
+                total_positions += new Vector3(0, 0, 0);
+            }
             else
             {
                 Vector3 player_pos = players[i].position;

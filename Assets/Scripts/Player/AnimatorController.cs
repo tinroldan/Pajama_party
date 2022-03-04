@@ -8,6 +8,7 @@ public class AnimatorController : MonoBehaviour
     Movement mov;
     [Range(0,1)]
     [SerializeField] int animation_type;
+    public static bool death;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +30,20 @@ public class AnimatorController : MonoBehaviour
     public void Die()
     {
         anim.SetTrigger("Die");
+        death = true;
+        mov.die = death;
         Invoke("Disable", 2f);
     }
-    public void Disable()
+    void Disable()
     {
         gameObject.SetActive(false);
-        Invoke("Reapear", 5);
+        if(Mov_Camera.local)Invoke("Reapear", 5);
     }
     void Reapear()
     {//TEMPORAL
         gameObject.SetActive(true);
+        death = false;
+        mov.die = death;
         anim.SetInteger("Animation_type", animation_type);
     }
 }

@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     [Range(-1,1)]
     [SerializeField]private float x_axis, z_axis;
     [SerializeField] ManagerJoystick manager_Joystick;
-    public bool running;
+    public bool running, die;
 
     //Modificaciones Chelo
     private float tpDistance = 5;
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         z_axis = manager_Joystick.InputVertical();
         if (x_axis != 0 || z_axis != 0)
         {
-            Change_Pos(x_axis, z_axis);
+            if(die == false) Change_Pos(x_axis, z_axis);
         }
         else running = false;
     }

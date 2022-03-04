@@ -189,12 +189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  max_speed: 0
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 521372981}
+  running: 0
   Shield: {fileID: 1786954535}
   ShieldPS: {fileID: 1157503132}
+  teleportPS: {fileID: 0}
+  TeleportButton: {fileID: 0}
+  shieldtime: 5
+  shieldActive: 0
 --- !u!114 &49480042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +305,7 @@ GameObject:
   - component: {fileID: 74703870}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +400,7 @@ GameObject:
   - component: {fileID: 158290926}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,7 +514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpID: 0
-  TeleportButton: {fileID: 474248911}
 --- !u!135 &316023031
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -601,7 +604,7 @@ GameObject:
   - component: {fileID: 342267775}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,7 +699,7 @@ GameObject:
   - component: {fileID: 364231726}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5910869421257967279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: TeleportPowerUp
         m_Mode: 1
@@ -1125,7 +1128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpID: 2
-  TeleportButton: {fileID: 474248911}
 --- !u!135 &599656146
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1216,7 +1218,7 @@ GameObject:
   - component: {fileID: 634487625}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1583,7 +1585,7 @@ Transform:
   - {fileID: 364231725}
   - {fileID: 158290925}
   m_Father: {fileID: 8040794574375135103}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130089307
 GameObject:
@@ -1693,7 +1695,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpID: 1
-  TeleportButton: {fileID: 474248911}
 --- !u!135 &1130943630
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1800,7 +1801,7 @@ GameObject:
   - component: {fileID: 1208749226}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1892,6 +1893,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 6276767002552405946, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276767002552405946, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6276767002552405951, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
       propertyPath: m_TagString
       value: Boomerang
@@ -1972,7 +1981,7 @@ GameObject:
   - component: {fileID: 1587497381}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2333,7 +2342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5910869421257967273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player2_Boomerang, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
@@ -2625,7 +2634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8040794574375135103}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5910869420218716520
 GameObject:
@@ -2703,7 +2712,7 @@ RectTransform:
   - {fileID: 1927115011}
   - {fileID: 474248910}
   m_Father: {fileID: 8040794574375135103}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2982,33 +2991,6 @@ Transform:
   m_Father: {fileID: 8040794574375135103}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &5910869421257967273 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 667207602238361204, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df80f6471f4d93740822413ba9d3d255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &5910869421257967276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 667207602238361201, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5910869421257967279 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 667207602238361202, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ab2309a23f8b44c9bd1173521c1a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5910869421404617568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,12 +3143,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5759632418662596887, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8981058107502577371, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
+--- !u!4 &6576880176005073118 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4946504384357145517, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
+  m_PrefabInstance: {fileID: 6576880176005073117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8040794574375135103
 Transform:
   m_ObjectHideFlags: 0
@@ -3181,10 +3172,10 @@ Transform:
   - {fileID: 5910869420228902558}
   - {fileID: 5910869420433539703}
   - {fileID: 5910869419570851408}
-  - {fileID: 5910869421257967276}
   - {fileID: 5910869420218716524}
   - {fileID: 5910869420194277463}
   - {fileID: 1049702373}
+  - {fileID: 6576880176005073118}
   - {fileID: 49480039}
   m_Father: {fileID: 0}
   m_RootOrder: 0

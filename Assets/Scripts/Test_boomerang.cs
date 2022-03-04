@@ -6,6 +6,7 @@ public class Test_boomerang : MonoBehaviour {
     [SerializeField] float speed, speedRotation;
     float inicialSpeed;
     public Rigidbody rb;
+    Vector3 dirVelocity;
     public Transform target, spawn;
     float time, timeBack;
     bool back, reflect = false;
@@ -15,6 +16,7 @@ public class Test_boomerang : MonoBehaviour {
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+        
         inicialSpeed = speed;
         gameObject.SetActive(false);
     }
@@ -26,25 +28,27 @@ public class Test_boomerang : MonoBehaviour {
             //    transform.eulerAngles = target.transform.localEulerAngles;
             //    print("hotatatata");
             //}
-            transform.position += transform.forward * speed * Time.deltaTime;
-            print("Estpy avanzando");
+            transform.position += dirVelocity * speed * Time.deltaTime;
+            print("Estpy avanzando: ");
         }
         if ((reflect || distance > 15) && !back) { //Reflejo            
-            if (speed <= 0) {
+            if (speed <= 0 ) {
                 Return();
-            }
-            speed -= 0.1f;
+            }           
+           speed -= 0.1f;
         }
         if (back) {
             timeBack += Time.deltaTime;
-            if (timeBack >= 2) { //Restar velocidad y quedarse quieto
-                speed -= 0.1f;
-                if (speed <= 0) {
+            if (timeBack >= 2) { //Restar velocidad y quedarse quieto             
+               speed -= 0.1f;
+                if (speed <= 0 ) {
                     speed = 0;
+                   
                 }
                 return;
             }
             if (speed < inicialSpeed) { //Se devuelve
+              
                 speed += 0.1f;
             }
             if (distance <= 2) {  //Recoge el boomerang
@@ -59,21 +63,24 @@ public class Test_boomerang : MonoBehaviour {
                 }
                 return;
             }
-            LookAtPlayer();
-            // transform.LookAt(target); // Mirar
+           // LookAtPlayer();
+            transform.LookAt(target); // Mirar
+            dirVelocity = transform.forward;
         }
+
     }
 
     public void Throw() { //Lanzar boomerang
         speed = inicialSpeed;
+        dirVelocity = transform.forward ; 
         transform.SetParent(null);
         transform.eulerAngles = spawn.eulerAngles;
-        print("Angulos: " + transform.localEulerAngles);
         back = false;
         shooted = true;
     }
     void Return() {
         back = true;
+        print("Estoy devuelta");
     }
     void PickUp() { // Recoger boomerang
         timeBack = 0;
@@ -90,7 +97,7 @@ public class Test_boomerang : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject == target.gameObject && back) { // jugador recoge boomerang
             PickUp();
-        } else if (collision.gameObject != target.gameObject) { //rebote Boomerang
+        } else if (collision.gameObject.CompareTag("Obstacles")) { //rebote Boomerang
             Return();
             reflect = true;
             /*Vector3 direction = collision.GetContact(0).normal;
@@ -100,20 +107,23 @@ public class Test_boomerang : MonoBehaviour {
              float a = Mathf.Asin( collision.GetContact(0).normal.magnitude/transform.position.magnitude );
             transform.eulerAngles=new Vector3(0,collision.transform.rotation.y -)
             print("Estoy chocando" + a);
+             
 
             transform.rotation = new Quaternion(0, Mathf.Asin(transform.position.magnitude / collision.GetContact(0).normal.magnitude), 0, 0);
             transform.rotation = Quaternion.Inverse(transform.rotation);*/
-            if (transform.eulerAngles.y <= 15 || transform.eulerAngles.y >= 315 || (transform.eulerAngles.y >= 135 &&
-                transform.eulerAngles.y <= 225)) {
-                transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
-            } else {
-                transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
-            }
-            print("Angulos222: " + transform.localEulerAngles);
+            //if (transform.eulerAngles.y <= 15 || transform.eulerAngles.y >= 315 || (transform.eulerAngles.y >= 135 &&
+            //    transform.eulerAngles.y <= 225)) {
+            //    transform.eulerAngles = new Vector3(0, Mathf.PI - transform.eulerAngles.y + 180, 0);
+            //} else {
+            //    transform.eulerAngles = new Vector3(0, 2 * Mathf.PI - transform.eulerAngles.y, 0);
+            //}
+            print("Estoy rebotando");
+            dirVelocity = Vector3.Reflect(dirVelocity, collision.GetContact(0).normal);
             //transform.eulerAngles.y = -transform.position + 2 * Vector3.Dot( transform.position,collision.GetContact(0).normal) * collision.GetContact(0).normal;
         }
     }
     void LookAtPlayer() {
+        
         Vector3 direction = target.position - transform.position;
         Quaternion toRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speedRotation * Time.deltaTime);

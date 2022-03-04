@@ -26,4 +26,19 @@ public class AnimatorController : MonoBehaviour
     {
         anim.SetTrigger("Throw");
     }
+    public void Die()
+    {
+        anim.SetTrigger("Die");
+        Invoke("Disable", 2f);
+    }
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+        Invoke("Reapear", 5);
+    }
+    void Reapear()
+    {//TEMPORAL
+        gameObject.SetActive(true);
+        anim.SetInteger("Animation_type", animation_type);
+    }
 }

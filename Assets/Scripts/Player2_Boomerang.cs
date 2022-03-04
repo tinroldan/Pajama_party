@@ -21,14 +21,16 @@ public class Player2_Boomerang : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject != myBoomerang.gameObject && other.gameObject.CompareTag("Boomerang")) {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            AnimatorController anim = GetComponent<AnimatorController>();
+            anim.Die();
             score += 1;
             if (gameObject.name == "Player (2)") {
                 myText.text = score.ToString();
             } else {
                 //secondText.text = score.ToString();
             }
-            Invoke("Reapear", 5);
+            //Invoke("Reapear", 5);
         }
     }
     void Reapear() {//TEMPORAL

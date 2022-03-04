@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(shieldtime);
+       
         if (shieldActive)
         {
             if (firsttime)

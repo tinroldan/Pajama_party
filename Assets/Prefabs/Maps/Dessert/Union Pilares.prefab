@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6332851760087765761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4947990770473749196}
+  - component: {fileID: 3037481142052567524}
+  - component: {fileID: 7868436974669816216}
+  m_Layer: 0
+  m_Name: Union Pilares
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4947990770473749196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332851760087765761}
+  m_LocalRotation: {x: -0.6124159, y: 0.3534782, z: 0.35347816, w: 0.6124158}
+  m_LocalPosition: {x: 0.108754635, y: -7.869999, z: 57.208855}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.8}
+  m_Children:
+  - {fileID: 5399978219930775909}
+  - {fileID: 1976564409397178281}
+  - {fileID: 247665128819478046}
+  - {fileID: 6885574708887760069}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 59.986}
+--- !u!33 &3037481142052567524
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332851760087765761}
+  m_Mesh: {fileID: -3076534687705026638, guid: 690f487eef6a3a9418c269a0c1480629, type: 3}
+--- !u!23 &7868436974669816216
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332851760087765761}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -2994419461996400785, guid: 690f487eef6a3a9418c269a0c1480629, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &133976757076694265
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4947990770473749196}
+    m_Modifications:
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091222908075537351, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_Name
+      value: Pilar Egipcio (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+--- !u!4 &247665128819478046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+  m_PrefabInstance: {fileID: 133976757076694265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1862858443353896270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4947990770473749196}
+    m_Modifications:
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091222908075537351, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_Name
+      value: Pilar Egipcio (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+--- !u!4 &1976564409397178281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+  m_PrefabInstance: {fileID: 1862858443353896270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5207439546508094338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4947990770473749196}
+    m_Modifications:
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7282507
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.632825
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.3588963
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091222908075537351, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_Name
+      value: Pilar Egipcio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+--- !u!4 &5399978219930775909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+  m_PrefabInstance: {fileID: 5207439546508094338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6717787960040060450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4947990770473749196}
+    m_Modifications:
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091222908075537351, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+      propertyPath: m_Name
+      value: Pilar Egipcio (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+--- !u!4 &6885574708887760069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 194808419964574439, guid: 1a9f22347f082f04ca65f05483cfeb4a, type: 3}
+  m_PrefabInstance: {fileID: 6717787960040060450}
+  m_PrefabAsset: {fileID: 0}

@@ -15,6 +15,8 @@ public class Localization_base : MonoBehaviour
             { "local_vs", "Local VS" },
             { "quit_game", "Quit Game" },
             { "hello", "Hello" },
+            { "start_game","Start Game" },
+            { "loading","Loading..." },
 
 
     };
@@ -29,21 +31,23 @@ public class Localization_base : MonoBehaviour
             { "local_vs", "Batalla Local" },
             { "quit_game", "Salir del juego" },
             { "hello", "Hola" },
+            { "start_game","Empezar Juego" },
+            { "loading","Cargando..." },
 
 
     };
-    
+
 
     public string GetTraslation(string key)
     {
         string translate = "";
         if (language == "SP")
         {
-            translate= dataText_SP[key];
+            translate = dataText_SP[key];
         }
         else if (language == "ENG")
         {
-            translate= dataText_ENG[key];
+            translate = dataText_ENG[key];
 
         }
         return translate;

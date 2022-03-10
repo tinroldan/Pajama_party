@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managerJoystick: {fileID: 521372981}
+  death: 0
 --- !u!114 &49480041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,14 +270,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  max_speed: 0
   x_axis: 0
   z_axis: 0
   manager_Joystick: {fileID: 521372981}
+  running: 0
+  die: 0
   Shield: {fileID: 1786954535}
   ShieldPS: {fileID: 1157503132}
   teleportPS: {fileID: 1890887801}
   TeleportButton: {fileID: 1960804560}
+  shieldtime: 5
+  shieldActive: 0
 --- !u!114 &49480042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,17 +751,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &338039242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 667207602238361202, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ab2309a23f8b44c9bd1173521c1a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &342267773
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,11 +941,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364231724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &432563580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3096987927032815052, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &521372980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2187,7 @@ Transform:
   - {fileID: 364231725}
   - {fileID: 158290925}
   m_Father: {fileID: 8040794574375135103}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115162759
 GameObject:
@@ -3161,7 +3149,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 338039242}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: TeleportPowerUp
         m_Mode: 1
@@ -3844,7 +3832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5910869421257967273}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player2_Boomerang, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
@@ -4170,7 +4158,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 200
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1250, y: 720}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -4492,22 +4480,6 @@ Transform:
   m_Father: {fileID: 8040794574375135103}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &5910869421257967273 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 667207602238361204, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df80f6471f4d93740822413ba9d3d255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &5910869421257967276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 667207602238361201, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
-  m_PrefabInstance: {fileID: 6576880176005073117}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5910869421404617568
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,11 +4627,11 @@ PrefabInstance:
     - target: {fileID: 667207602238361202, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
       propertyPath: Shield
       value: 
-      objectReference: {fileID: 432563580}
+      objectReference: {fileID: 0}
     - target: {fileID: 667207602238361202, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
       propertyPath: teleportPS
       value: 
-      objectReference: {fileID: 6576880176005073118}
+      objectReference: {fileID: 0}
     - target: {fileID: 667207602238361202, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
       propertyPath: TeleportButton
       value: 
@@ -4682,9 +4654,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
---- !u!198 &6576880176005073118 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7007402744336572225, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
+--- !u!4 &6576880176005073118 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4946504384357145517, guid: 63f52449ec5d33d4a91774a7de43d972, type: 3}
   m_PrefabInstance: {fileID: 6576880176005073117}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8040794574375135103
@@ -4703,8 +4675,8 @@ Transform:
   - {fileID: 5910869419570851408}
   - {fileID: 5910869420218716524}
   - {fileID: 5910869420194277463}
-  - {fileID: 5910869421257967276}
   - {fileID: 1049702373}
+  - {fileID: 6576880176005073118}
   - {fileID: 49480039}
   m_Father: {fileID: 0}
   m_RootOrder: 0

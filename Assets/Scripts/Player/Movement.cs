@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (manager_Joystick == null) return;
         x_axis = manager_Joystick.InputHorizontal();
         z_axis = manager_Joystick.InputVertical();
         if (x_axis != 0 || z_axis != 0)

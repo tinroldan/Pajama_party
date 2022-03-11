@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ea88f72366c594cafea9fcc598d7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Manager
+  tag_manager: Manager
   gameManager: {fileID: 4841634319527413482, guid: 70d6fddbc7b911342a0f046c24b9e3db, type: 3}
 --- !u!4 &6727282
 Transform:
@@ -860,7 +860,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ModeSelector_Test
+          m_StringArgument: Start_Screen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &386343674
@@ -1644,7 +1644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000011444092}
+  m_AnchoredPosition: {x: 0, y: 0.0000038146973}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1668530808

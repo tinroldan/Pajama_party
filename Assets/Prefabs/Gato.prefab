@@ -671,9 +671,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.06
-  m_Height: 4.06
+  m_Height: 4.62256
   m_Direction: 1
-  m_Center: {x: 0, y: 2.12, z: -0.0014916062}
+  m_Center: {x: 0, y: 1.8387196, z: -0.0014915466}
 --- !u!95 &3825955219943001271
 Animator:
   serializedVersion: 3
@@ -774,7 +774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df80f6471f4d93740822413ba9d3d255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBlack: {fileID: 0}
   myBoomerang: {fileID: 4934337388809163173}
 --- !u!1 &3953297687706660822
 GameObject:

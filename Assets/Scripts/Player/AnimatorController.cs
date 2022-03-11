@@ -38,12 +38,18 @@ public class AnimatorController : MonoBehaviour
     void Disable()
     {
         gameObject.SetActive(false);
-        Invoke("Change_Map", 7);
+        if (Mov_Camera.local)
+        {
+            Map_Manager.change_mp = true;
+            Invoke("Change_Map", 5);
+        }
+
     }
     void Change_Map()
-    {/*TEMPORAL
+    {
         mov.die = false;
         look.death = false;
-        anim.SetInteger("Animation_type", animation_type);*/
+        anim.SetInteger("Animation_type", animation_type);
+        Map_Manager.change_mp = false;
     }
 }

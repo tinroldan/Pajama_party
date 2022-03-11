@@ -28,6 +28,10 @@ public class Map_Manager : MonoBehaviour
             DisableCanvas();
         }
         else return;
+        if(Mov_Camera.local == false)
+        {
+
+        }
     }
 
     private void DisableCanvas()

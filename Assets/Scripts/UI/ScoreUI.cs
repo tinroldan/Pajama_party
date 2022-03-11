@@ -18,10 +18,17 @@ public class ScoreUI : MonoBehaviour
             points[i] = Instantiate(reference,transform);
             
         }
-        for (int i = 0; i < scoreScript.myScore; i++) {
-            points[i].GetComponent<Image>().sprite = paw;
-            points[i].GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1);
+       
+
+    }
+    private void Update() {
+        if (gameObject) {
+            for (int i = 0; i < scoreScript.myScore; i++) {
+                points[i].GetComponent<Image>().sprite = paw;
+                points[i].GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1);
+                
+            }
         }
     }
-   
+
 }

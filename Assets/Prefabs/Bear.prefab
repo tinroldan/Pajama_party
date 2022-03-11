@@ -1267,6 +1267,7 @@ GameObject:
   - component: {fileID: 8609298712194283171}
   - component: {fileID: 8609298712194283168}
   - component: {fileID: 8609298712194283169}
+  - component: {fileID: 1327654726202828801}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Player
@@ -1429,6 +1430,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundBlack: {fileID: 0}
   myBoomerang: {fileID: 1270026417904615802}
+--- !u!114 &1327654726202828801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609298712194283174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfc2769450a2404d91f6c8b5b15ccf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test_Boomerang: {fileID: 1270026417904615802}
+  myScore: 0
 --- !u!1 &8765153017684363697
 GameObject:
   m_ObjectHideFlags: 0

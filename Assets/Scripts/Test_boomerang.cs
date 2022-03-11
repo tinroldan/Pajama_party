@@ -5,6 +5,7 @@ using UnityEngine;
 public class Test_boomerang : MonoBehaviour {
     public delegate void BoomerangEvents();
     public event BoomerangEvents Score;
+    Map_Manager map_Manager;
     [SerializeField] float speed, speedRotation;
     float inicialSpeed;
     public Rigidbody rb;
@@ -16,9 +17,11 @@ public class Test_boomerang : MonoBehaviour {
     float distance;
 
     private void Awake() {
+        map_Manager = FindObjectOfType<Map_Manager>();
         rb = GetComponent<Rigidbody>();
         inicialSpeed = speed;
         gameObject.SetActive(false);
+        map_Manager.Mapchanger += PickUp;
 
     }
 
@@ -98,6 +101,8 @@ public class Test_boomerang : MonoBehaviour {
             Return();
             reflect = true;
             print("Estoy rebotando");
+            managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
+            manager.soundReboting();
             dirVelocity = Vector3.Reflect(dirVelocity, collision.GetContact(0).normal);
         } else if(collision.gameObject.CompareTag("Player")) {
             print("Matando a alguien");

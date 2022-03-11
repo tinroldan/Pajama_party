@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Map_Manager : MonoBehaviour
-{
+public class Map_Manager : MonoBehaviour {
+    public delegate void PickupE();
+    public event PickupE Mapchanger;
     [SerializeField] public GameObject[] maps;
     GameObject[] players;
     public static bool change_mp;
@@ -53,7 +54,7 @@ public class Map_Manager : MonoBehaviour
     }
 
     private void ChangeMap()
-    {
+    {   if (Mapchanger != null) Mapchanger();
         score_panel.SetActive(true);
         int rnd = Random.Range(0, maps.Length-1);
         for (int i = 0; i < maps.Length; i++)

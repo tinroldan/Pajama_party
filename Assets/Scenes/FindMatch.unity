@@ -1070,7 +1070,7 @@ MonoBehaviour:
   roomNameInpuField: {fileID: 1228033816}
   errorText: {fileID: 944896010}
   roomNameText: {fileID: 1055172032}
-  modeSelectorMenu: ModeSelector_Test
+  modeSelectorMenu: Start_Screen
   roomListContent: {fileID: 1931532080}
   roomListItemPrefab: {fileID: 486554773689057883, guid: a331e93d13644954ab1232beb2209fd3, type: 3}
   playerListContent: {fileID: 967092158}

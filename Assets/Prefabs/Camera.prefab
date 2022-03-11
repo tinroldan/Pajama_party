@@ -144,4 +144,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   initial_pos: {x: 0, y: 0, z: 0}
-  zoom_pos: {x: 1.4000001, y: 13.8, z: -7}
+  zoom_pos: {x: 1.4000001, y: 19, z: -1}
+  initial_local_pos: {x: 1.4, y: 46, z: 0.7}

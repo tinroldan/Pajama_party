@@ -16,7 +16,7 @@ public class Localise : MonoBehaviour
     void Start()
     {
         dataText = GameObject.FindGameObjectWithTag("Manager").GetComponent<Localization_base>();
-        if(dataText!=null)
+        if(dataText!=null&&!string.IsNullOrEmpty(key))
         {
             string translate = dataText.GetTraslation(key);
             if (key != null&& translate!=null)
@@ -29,7 +29,7 @@ public class Localise : MonoBehaviour
 
     public void SetLang()
     {
-        if (dataText != null)
+        if (dataText != null && !string.IsNullOrEmpty(key))
         {
             string translate = dataText.GetTraslation(key);
             if (key != null && translate != null)

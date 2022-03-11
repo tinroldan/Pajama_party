@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player2_Boomerang : MonoBehaviour {
-    
+    Map_Manager map_Manager;
     [SerializeField] public Test_boomerang myBoomerang;
     int score;
     bool alive;
@@ -12,10 +12,12 @@ public class Player2_Boomerang : MonoBehaviour {
    
   
     void Start() {
+        map_Manager = FindObjectOfType<Map_Manager>();
         myCollider = GetComponent<CapsuleCollider>();
         alive = true;
         myBoomerang.target = transform;
         mov = GetComponent<Movement>();
+        map_Manager.Mapchanger += Activatecollider;
     }
 
     public void Shoot() {
@@ -50,5 +52,9 @@ public class Player2_Boomerang : MonoBehaviour {
             }
 
         }
+    }
+
+    void Activatecollider() {
+        myCollider.enabled = true;
     }
 }

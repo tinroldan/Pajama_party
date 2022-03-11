@@ -7,7 +7,7 @@ public class Zoom_Camera : MonoBehaviour
 {
     [Header("Jugadores")]
     [SerializeField] private List<Transform> players;
-    [SerializeField] Vector3 initial_pos, zoom_pos;
+    [SerializeField] Vector3 initial_pos, zoom_pos, initial_local_pos;
     int count_number;
     [Range(0,1)]
     float lerp_percent;
@@ -24,6 +24,7 @@ public class Zoom_Camera : MonoBehaviour
             players.Add(p[i].GetComponent<Transform>());
         }
         CalculateMaxDistance();
+    
     }
     private void CalculateMaxDistance()
     {
@@ -62,6 +63,16 @@ public class Zoom_Camera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (Mov_Camera.local)
+        {
+            Quaternion rotate = Quaternion.Euler(90, 0, 0);
+            transform.rotation = rotate;
+        }
+        else
+        {
+            Quaternion rotate = Quaternion.Euler(60, 0, 0);
+            transform.rotation = rotate;
+        }
         ZoomCalculation();
     }
 
@@ -99,6 +110,7 @@ public class Zoom_Camera : MonoBehaviour
         if (average_distance > max_distance) max_distance = average_distance;
         lerp_percent = average_distance / max_distance*2;
         if (dead_player) lerp_percent = 1;
-        transform.localPosition = Vector3.Lerp(zoom_pos, initial_pos, lerp_percent);
+        if (Mov_Camera.local == false) transform.localPosition = Vector3.Lerp(zoom_pos, initial_pos, lerp_percent);
+        else transform.localPosition = Vector3.Lerp(zoom_pos, initial_local_pos, lerp_percent);
     }
 }

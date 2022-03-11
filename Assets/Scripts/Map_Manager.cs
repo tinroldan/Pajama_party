@@ -68,7 +68,7 @@ public class Map_Manager : MonoBehaviour
     private void Teleport_players(int rnd)
     {
 
-        int spawns = maps[rnd].transform.GetChild(0).transform.GetChildCount();
+        int spawns = maps[rnd].transform.GetChild(0).transform.childCount;
         Transform[] spawnpoints = new Transform[spawns];
         for (int i = 0; i < spawnpoints.Length; i++)
         {

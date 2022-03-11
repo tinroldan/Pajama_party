@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     public bool running, die;
 
     //Modificaciones Chelo
-    private float tpDistance = 5;
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
     [SerializeField] ParticleSystem ShieldPS, teleportPS;
@@ -26,11 +25,14 @@ public class Movement : MonoBehaviour
     public float shieldtime = 5f;
     public bool shieldActive = false;
     private bool firsttime = true;
+
+    public GameObject playerBoomerang;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (manager_Joystick == null) return;
         x_axis = manager_Joystick.InputHorizontal();
         z_axis = manager_Joystick.InputVertical();
         if (x_axis != 0 || z_axis != 0)
@@ -40,8 +42,7 @@ public class Movement : MonoBehaviour
         else running = false;
     }
     private void Update()
-    {
-       
+    {      
         if (shieldActive)
         {
             if (firsttime)
@@ -75,7 +76,8 @@ public class Movement : MonoBehaviour
 
     public void TeleportPowerUp()
     {
-        transform.position += transform.forward * tpDistance;
+        transform.position = playerBoomerang.transform.position;
+        Instantiate(teleportPS, transform.position, Quaternion.identity);
         teleportPS.gameObject.SetActive(true);
         teleportPS.Play();
     }

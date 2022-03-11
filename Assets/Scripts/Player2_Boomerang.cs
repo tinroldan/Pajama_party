@@ -5,12 +5,17 @@ public class Player2_Boomerang : MonoBehaviour {
     
     [SerializeField] public Test_boomerang myBoomerang;
     int score;
+    bool alive;
     Text myText;
-    Rigidbody rbBoomerang;
-    // Start is called before the first frame update
+    CapsuleCollider myCollider;
+    Movement mov;
+   
+  
     void Start() {
-        rbBoomerang = myBoomerang.rb;
+        myCollider = GetComponent<CapsuleCollider>();
+        alive = true;
         myBoomerang.target = transform;
+        mov = GetComponent<Movement>();
     }
 
     public void Shoot() {
@@ -21,22 +26,20 @@ public class Player2_Boomerang : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject != myBoomerang.gameObject && other.gameObject.CompareTag("Boomerang")) {
-            //gameObject.SetActive(false);
-            AnimatorController anim = GetComponent<AnimatorController>();
-            anim.Die();
-            score += 1;
-            if (gameObject.name == "Player (2)") {
-                myText.text = score.ToString();
-            } else {
-                //secondText.text = score.ToString();
+            if (mov.shieldActive)
+            {
+                return;
             }
-            //Invoke("Reapear", 5);
+            else
+            {
+                myCollider.enabled = false;
+
+                AnimatorController anim = GetComponent<AnimatorController>();
+                anim.Die();
+                alive = false;
+               
+            }
+          
         }
     }
-    void Reapear() {//TEMPORAL
-        gameObject.SetActive(true);
-    }
-
-
-
 }

@@ -7,58 +7,49 @@ public class Map_Manager : MonoBehaviour {
     public event PickupE Mapchanger;
     [SerializeField] public GameObject[] maps;
     GameObject[] players;
+    public static bool winner;
     public static bool change_mp;
     [Range(0, 1)]
     int counter;
     public static int players_deaths;
     [SerializeField] private GameObject score_panel;
 
-    private void Start()
-    {
+    private void Start() {
         players = GameObject.FindGameObjectsWithTag("Player");
     }
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
 
-        if (Mov_Camera.local == false)
-        {
-            if (players_deaths == players.Length - 1 && counter == 0)
-            {
+        if (Mov_Camera.local == false) {
+            if (players_deaths == players.Length - 1 && counter == 0) {
                 counter = 1;
                 ChangeMap();
 
             }
-        }
-        else if (change_mp && counter == 1)
-        {
+        } else if (change_mp && counter == 1) {
             counter = 0;
             ChangeMap();
-        }
-        else if (change_mp == false && counter == 0)
-        {
+        } else if (change_mp == false && counter == 0) {
             counter = 1;
             DisableCanvas();
-        }
-        else return;
+        } else return;
 
     }
 
-    private void DisableCanvas()
-    {
-        if (Mov_Camera.local == false)
-        {
-            players_deaths = 0;
-            counter = 0;
+    private void DisableCanvas() {
+        if (winner == false) {
+            if (Mov_Camera.local == false) {
+                players_deaths = 0;
+                counter = 0;
+            }
+            score_panel.SetActive(false);
         }
-        score_panel.SetActive(false);
     }
 
-    private void ChangeMap()
-    {   if (Mapchanger != null) Mapchanger();
+    private void ChangeMap() {
+        if (Mapchanger != null) Mapchanger();
         score_panel.SetActive(true);
-        int rnd = Random.Range(0, maps.Length-1);
-        for (int i = 0; i < maps.Length; i++)
-        {
+        int rnd = Random.Range(0, maps.Length - 1);
+        for (int i = 0; i < maps.Length; i++) {
             maps[i].SetActive(false);
         }
         maps[rnd].SetActive(true);
@@ -66,23 +57,19 @@ public class Map_Manager : MonoBehaviour {
 
 
     }
-    private void Teleport_players(int rnd)
-    {
+    private void Teleport_players(int rnd) {
 
         int spawns = maps[rnd].transform.GetChild(0).transform.childCount;
         Transform[] spawnpoints = new Transform[spawns];
-        for (int i = 0; i < spawnpoints.Length; i++)
-        {
+        for (int i = 0; i < spawnpoints.Length; i++) {
             spawnpoints[i] = maps[rnd].transform.GetChild(0).GetChild(i).transform;
         }
-        for (int i = 0; i < players.Length; i++)
-        {
+        for (int i = 0; i < players.Length; i++) {
             players[i].transform.position = spawnpoints[i].position;
-            if (Mov_Camera.local == false)
-            {
+            if (Mov_Camera.local == false) {
                 players[i].gameObject.SetActive(true);
                 Debug.Log(players[i].activeSelf);
-                if(players[i].activeSelf == false) players[i].gameObject.SetActive(true);
+                if (players[i].activeSelf == false) players[i].gameObject.SetActive(true);
             }
             if (Mov_Camera.local == false) Invoke("DisableCanvas", 5f);
         }

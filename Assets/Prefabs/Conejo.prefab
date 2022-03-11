@@ -1192,7 +1192,7 @@ GameObject:
   - component: {fileID: 8160773541897997937}
   - component: {fileID: 8160773541897997936}
   - component: {fileID: 483412083011967332}
-  - component: {fileID: 6845293683707127548}
+  - component: {fileID: 1035073059030131705}
   m_Layer: 0
   m_Name: Conejo
   m_TagString: Player
@@ -1354,8 +1354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test_Boomerang: {fileID: 3696216730610801236}
   myScore: 0
---- !u!65 &6845293683707127548
-BoxCollider:
+--- !u!136 &1035073059030131705
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1364,9 +1364,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4281845, y: 5.0190296, z: 2.1599846}
-  m_Center: {x: -0.03936386, y: 2.0095148, z: 0.17745018}
+  m_Radius: 1.06
+  m_Height: 4.62256
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.8387196, z: -0.0014915466}
 --- !u!1 &8251875453310954772
 GameObject:
   m_ObjectHideFlags: 0

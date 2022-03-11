@@ -1260,7 +1260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8949091422609419292}
   - component: {fileID: 8609298712194283182}
-  - component: {fileID: 8609298712194283183}
   - component: {fileID: 8609298712194283180}
   - component: {fileID: 8609298712194283181}
   - component: {fileID: 8609298712194283170}
@@ -1268,6 +1267,7 @@ GameObject:
   - component: {fileID: 8609298712194283168}
   - component: {fileID: 8609298712194283169}
   - component: {fileID: 1327654726202828801}
+  - component: {fileID: 684086287}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Player
@@ -1314,20 +1314,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!136 &8609298712194283183
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8609298712194283174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.06
-  m_Height: 4.06
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.12, z: -0.0014916062}
 --- !u!95 &8609298712194283180
 Animator:
   serializedVersion: 3
@@ -1395,13 +1381,13 @@ MonoBehaviour:
   manager_Joystick: {fileID: 0}
   running: 0
   die: 0
-  Shield: {fileID: 0}
-  ShieldPS: {fileID: 0}
-  teleportPS: {fileID: 0}
+  Shield: {fileID: 3158244891838484933}
+  ShieldPS: {fileID: 5707383315337038824}
+  teleportPS: {fileID: 4244850016666721907}
   TeleportButton: {fileID: 0}
   shieldtime: 5
   shieldActive: 0
-  playerBoomerang: {fileID: 0}
+  playerBoomerang: {fileID: 1270026417904615804}
 --- !u!114 &8609298712194283168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,7 +1414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df80f6471f4d93740822413ba9d3d255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBlack: {fileID: 0}
   myBoomerang: {fileID: 1270026417904615802}
 --- !u!114 &1327654726202828801
 MonoBehaviour:
@@ -1444,6 +1429,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test_Boomerang: {fileID: 1270026417904615802}
   myScore: 0
+--- !u!65 &684086287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609298712194283174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4281845, y: 5.0190296, z: 2.1599846}
+  m_Center: {x: -0.03936386, y: 2.0095148, z: 0.17745018}
 --- !u!1 &8765153017684363697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1594,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8196397050778273347, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
   m_PrefabInstance: {fileID: 4506908410483379628}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &5707383315337038824 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196397050778273348, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
+  m_PrefabInstance: {fileID: 4506908410483379628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5096812646537531075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,12 +1686,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6276767002552405945, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
   m_PrefabInstance: {fileID: 5096812646537531075}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1270026417904615804}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf643c92760228e49a9c99d419d8ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1270026417904615804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6276767002552405951, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
+  m_PrefabInstance: {fileID: 5096812646537531075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8025205319322121384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,5 +1773,10 @@ PrefabInstance:
 --- !u!4 &4244850016666721906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6176683789784066778, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
+  m_PrefabInstance: {fileID: 8025205319322121384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4244850016666721907 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6176683789784066779, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
   m_PrefabInstance: {fileID: 8025205319322121384}
   m_PrefabAsset: {fileID: 0}

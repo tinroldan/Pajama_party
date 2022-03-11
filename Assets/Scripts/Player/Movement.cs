@@ -41,8 +41,7 @@ public class Movement : MonoBehaviour
         else running = false;
     }
     private void Update()
-    {
-       
+    {      
         if (shieldActive)
         {
             if (firsttime)

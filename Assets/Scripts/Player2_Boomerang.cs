@@ -8,12 +8,14 @@ public class Player2_Boomerang : MonoBehaviour {
     bool alive;
     Text myText;
     CapsuleCollider myCollider;
+    Movement mov;
    
   
     void Start() {
         myCollider = GetComponent<CapsuleCollider>();
         alive = true;
         myBoomerang.target = transform;
+        mov = GetComponent<Movement>();
     }
 
     public void Shoot() {
@@ -24,19 +26,20 @@ public class Player2_Boomerang : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject != myBoomerang.gameObject && other.gameObject.CompareTag("Boomerang")) {
-            myCollider.enabled = false;
+            if (mov.shieldActive)
+            {
+                return;
+            }
+            else
+            {
+                myCollider.enabled = false;
 
-            AnimatorController anim = GetComponent<AnimatorController>();
-            anim.Die();
-            alive = false;
-            backgroundBlack.SetActive(true);
-            
-           
+                AnimatorController anim = GetComponent<AnimatorController>();
+                anim.Die();
+                alive = false;
+                backgroundBlack.SetActive(true);
+            }
           
         }
     }
-    
-
-
-
 }

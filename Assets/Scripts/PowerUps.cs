@@ -39,8 +39,8 @@ public class PowerUps : MonoBehaviour
                         Destroy(this.gameObject);
                         break;
                     case 1:
+                        _player.shieldActive = true;
                         _player.ShieldPowerUp();
-                        StartCoroutine(Timer());
                         Destroy(this.gameObject);
                         break;
                     case 2:

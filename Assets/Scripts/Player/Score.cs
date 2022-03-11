@@ -5,7 +5,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
    [SerializeField] Test_boomerang test_Boomerang;
-    public int myScore;
+    public int myScore =0;
     // Start is called before the first frame update
   
     private void Awake() {

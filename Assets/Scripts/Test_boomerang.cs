@@ -5,6 +5,7 @@ using UnityEngine;
 public class Test_boomerang : MonoBehaviour {
     public delegate void BoomerangEvents();
     public event BoomerangEvents Score;
+    Map_Manager map_Manager;
     [SerializeField] float speed, speedRotation;
     float inicialSpeed;
     public Rigidbody rb;
@@ -16,9 +17,11 @@ public class Test_boomerang : MonoBehaviour {
     float distance;
 
     private void Awake() {
+        map_Manager = FindObjectOfType<Map_Manager>();
         rb = GetComponent<Rigidbody>();
         inicialSpeed = speed;
         gameObject.SetActive(false);
+        map_Manager.PickupBoomerang += PickUp;
 
     }
 

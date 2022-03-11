@@ -17,6 +17,7 @@ public class LookAt : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (managerJoystick == null) return;
         direction.x = managerJoystick.InputHorizontal();
         direction.y = managerJoystick.InputVertical();
         if (direction!= Vector2.zero && death == false)

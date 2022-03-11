@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9187333428838214450
+--- !u!1 &5456430889401677029
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3097392936124529533}
-  - component: {fileID: 7076902490345542896}
-  - component: {fileID: 3489259840818757119}
-  - component: {fileID: 180500970957080367}
+  - component: {fileID: 2178321209538241706}
+  - component: {fileID: 6264754189892045607}
+  - component: {fileID: 336224853939053096}
+  - component: {fileID: 5456430889401677030}
+  - component: {fileID: 5456430889401677031}
   m_Layer: 0
   m_Name: Dog House
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3097392936124529533
+--- !u!4 &2178321209538241706
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187333428838214450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.024, y: -0.0191, z: 0.0077}
-  m_LocalScale: {x: 149.99998, y: 150.00002, z: 150}
+  m_GameObject: {fileID: 5456430889401677029}
+  m_LocalRotation: {x: -0.6532814, y: 0.2705984, z: 0.27059847, w: 0.6532813}
+  m_LocalPosition: {x: -10.5, y: 1.25, z: -13}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7076902490345542896
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 45}
+--- !u!33 &6264754189892045607
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187333428838214450}
-  m_Mesh: {fileID: -8443796708831441660, guid: 5be213c1cfda95447b2f9eff8cfeca05, type: 3}
---- !u!23 &3489259840818757119
+  m_GameObject: {fileID: 5456430889401677029}
+  m_Mesh: {fileID: -8443796708831441660, guid: d54212e7faf8a5e408fccabc4cdd3ebd, type: 3}
+--- !u!23 &336224853939053096
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187333428838214450}
+  m_GameObject: {fileID: 5456430889401677029}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +61,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 1608361724778896591, guid: d54212e7faf8a5e408fccabc4cdd3ebd, type: 3}
+  - {fileID: -5396234901987582864, guid: d54212e7faf8a5e408fccabc4cdd3ebd, type: 3}
+  - {fileID: -3237791216418079650, guid: d54212e7faf8a5e408fccabc4cdd3ebd, type: 3}
+  - {fileID: 312369938519586294, guid: d54212e7faf8a5e408fccabc4cdd3ebd, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,16 +86,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &180500970957080367
+--- !u!54 &5456430889401677030
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456430889401677029}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &5456430889401677031
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187333428838214450}
+  m_GameObject: {fileID: 5456430889401677029}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.012544409, y: 0.012544413, z: 0.012315926}
-  m_Center: {x: -0.00022564625, y: -0.0000000013969845, z: 0.0015326861}
+  m_Size: {x: 4.704879, y: 4.7048783, z: 4.6191835}
+  m_Center: {x: -0.65083325, y: -0.0010517834, z: 1.7135547}

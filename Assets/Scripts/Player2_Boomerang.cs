@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player2_Boomerang : MonoBehaviour {
-    
+    [SerializeField] GameObject backgroundBlack;
     [SerializeField] public Test_boomerang myBoomerang;
     int score;
     bool alive;
@@ -29,7 +29,7 @@ public class Player2_Boomerang : MonoBehaviour {
             AnimatorController anim = GetComponent<AnimatorController>();
             anim.Die();
             alive = false;
-            
+            backgroundBlack.SetActive(true);
             
            
           

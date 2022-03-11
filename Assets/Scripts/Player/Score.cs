@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    Test_boomerang test_Boomerang;
+   [SerializeField] Test_boomerang test_Boomerang;
     public int myScore;
     // Start is called before the first frame update
   
     private void Awake() {
-        test_Boomerang = GetComponentInChildren<Test_boomerang>();
+       // test_Boomerang = GetComponentInChildren<Test_boomerang>();
         test_Boomerang.Score += AddScore;
     }
 

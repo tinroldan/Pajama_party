@@ -7,14 +7,21 @@ using TMPro;
 public class ChangeLang : MonoBehaviour
 {
     Localization_base langData;
-    [SerializeField] TMP_Dropdown langLabel;
+    [SerializeField] TMP_Text langLabel;
 
     [SerializeField] UnityEvent lang_Event;
-
+    int curLang;
     string[] langsArray = new string[]
     {
         "SP",
         "ENG",
+
+    };
+
+    string[] langsText = new string[]
+    {
+        "Spanish",
+        "English",
     };
 
     void Start()
@@ -23,11 +30,45 @@ public class ChangeLang : MonoBehaviour
         SetLang();
     }
 
+    public void LeftButton()
+    {
+        if (curLang > 0)
+        {
+            curLang -= 1;
+        }
+        else
+        {
+            curLang = langsArray.Length - 1;
+        }
+
+        print("lang is: " + curLang);
+        SetLang();
+
+    }
+
+    public void RightButton()
+    {
+        
+
+        if (curLang < langsArray.Length-1)
+        {
+            curLang += 1;
+        }
+        else
+        {
+            curLang = 0;
+        }
+        Debug.Log("lang is: " + curLang);
+        SetLang();
+    }
+
+
     public void SetLang()
     {
-        if(langData!=null)
+        if (langData != null)
         {
-            langData.language = langsArray[langLabel.value];
+            langData.language = langsArray[curLang];
+            langLabel.text = langsText[curLang];
         }
 
         if (lang_Event != null)

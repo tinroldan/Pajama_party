@@ -17,7 +17,15 @@ public class Localization_base : MonoBehaviour
             { "hello", "Hello" },
             { "start_game","Start Game" },
             { "loading","Loading..." },
-
+            { "online_multiplayer","Online Multiplayer" },
+            { "back","Back" },
+            { "controls","Controls" },
+            { "lang","Language" },
+            { "sound","Sound" },
+            { "settings","Settings" },
+            { "move","Move" },
+            { "throw","Throw" },
+            { "dash","Dash" },
 
     };
 
@@ -33,8 +41,15 @@ public class Localization_base : MonoBehaviour
             { "hello", "Hola" },
             { "start_game","Empezar Juego" },
             { "loading","Cargando..." },
-
-
+            { "online_multiplayer","Multijugdor en linea" },
+            { "back","Volver" },
+            { "controls","Controles" },
+            { "lang","Idioma" },
+            { "sound","Sonido" },
+            { "settings","Configuraciones" },
+            { "move","Mover" },
+            { "throw","Lanzar" },
+            { "dash","Turbo" },
     };
 
 

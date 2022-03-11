@@ -6,13 +6,13 @@ public class Mov_Camera : MonoBehaviour
 {
     [Header("Jugadores")]
     [SerializeField] private List<Transform> players;
-    Transform camera;
+    Transform camera_obj;
     [SerializeField]private bool local_game;
     public static bool local;
     // Start is called before the first frame update
     void Start()
     {
-        camera = GetComponent<Transform>();
+        camera_obj = GetComponent<Transform>();
         var p = GameObject.FindGameObjectsWithTag("Player");
         players = new List<Transform>();
         for (int i = 0; i < p.Length; i++)
@@ -48,6 +48,6 @@ public class Mov_Camera : MonoBehaviour
         
         }
         average_center = (total_positions / players.Count);
-        camera.position = average_center;
+        camera_obj.position = average_center;
     }
 }

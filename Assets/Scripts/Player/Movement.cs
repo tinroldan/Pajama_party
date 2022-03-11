@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     public bool running, die;
 
     //Modificaciones Chelo
+    private float tpDistance = 5;
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
     [SerializeField] ParticleSystem ShieldPS, teleportPS;
@@ -25,9 +26,6 @@ public class Movement : MonoBehaviour
     public float shieldtime = 5f;
     public bool shieldActive = false;
     private bool firsttime = true;
-
-
-    [SerializeField] private GameObject playerBoomerang;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -43,7 +41,7 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(shieldtime);      
+       
         if (shieldActive)
         {
             if (firsttime)
@@ -51,17 +49,15 @@ public class Movement : MonoBehaviour
                 ShieldPowerUp();
                 firsttime = false;
             }
+            shieldtime -= Time.deltaTime;
         }
-        shieldtime -= Time.deltaTime;
         if (shieldtime <= 0)
         {
             StopShield();
             shieldActive = false;
             shieldtime = 5f;
         }
-
     }
-
     public void Change_Pos(float x, float z)
     {
         running = true;
@@ -72,14 +68,14 @@ public class Movement : MonoBehaviour
     }
     public IEnumerator SpeedPowerUp()
     {
-        speed = speed * 1.2f;
+        speed = speed * 1.5f;
         yield return new WaitForSeconds(5f);
         speed = speed / 1.5f;
     }
 
     public void TeleportPowerUp()
     {
-        transform.position = playerBoomerang.transform.position;
+        transform.position += transform.forward * tpDistance;
         teleportPS.gameObject.SetActive(true);
         teleportPS.Play();
     }

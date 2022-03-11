@@ -101,6 +101,8 @@ public class Test_boomerang : MonoBehaviour {
             Return();
             reflect = true;
             print("Estoy rebotando");
+            managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
+            manager.soundReboting();
             dirVelocity = Vector3.Reflect(dirVelocity, collision.GetContact(0).normal);
         } else if(collision.gameObject.CompareTag("Player")) {
             print("Matando a alguien");

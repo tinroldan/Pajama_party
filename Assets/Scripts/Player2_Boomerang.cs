@@ -22,7 +22,11 @@ public class Player2_Boomerang : MonoBehaviour {
        
         if (myBoomerang.shooted || !gameObject.activeSelf) return;
         myBoomerang.gameObject.SetActive(true);
+        
         myBoomerang.Throw();
+        managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
+        manager.soundShoot();
+
     }
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject != myBoomerang.gameObject && other.gameObject.CompareTag("Boomerang")) {
@@ -37,9 +41,14 @@ public class Player2_Boomerang : MonoBehaviour {
                 AnimatorController anim = GetComponent<AnimatorController>();
                 anim.Die();
                 alive = false;
-               
+
+                // Modificaci n Jose
+                managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
+                manager.soundDie();
+                //Hasta ac  
+
             }
-          
+
         }
     }
 }

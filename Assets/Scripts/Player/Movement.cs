@@ -58,6 +58,14 @@ public class Movement : MonoBehaviour
             shieldActive = false;
             shieldtime = 5f;
         }
+
+        //Modificaci n Jose 
+        managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
+
+        if (running == true)
+        {
+            manager.soundMove();
+        }
     }
     public void Change_Pos(float x, float z)
     {

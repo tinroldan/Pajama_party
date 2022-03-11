@@ -19,7 +19,7 @@ public class AnimatorController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (mov.running) anim.SetBool("Running", true);
         else anim.SetBool("Running", false);
@@ -43,12 +43,14 @@ public class AnimatorController : MonoBehaviour
             Map_Manager.change_mp = true;
             Invoke("Change_Map", 5);
         }
+        else ++Map_Manager.players_deaths;
 
     }
     void Change_Map()
     {
         mov.die = false;
         look.death = false;
+        gameObject.SetActive(true);
         anim.SetInteger("Animation_type", animation_type);
         Map_Manager.change_mp = false;
     }

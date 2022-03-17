@@ -10,6 +10,7 @@ public class managerSound : MonoBehaviour
     public AudioSource soundMovement;
     public AudioSource soundShooting;
     public AudioSource soundRebote;
+    public AudioSource soundButtonSettings;
   
     // Start is called before the first frame update
     void Start()
@@ -59,5 +60,12 @@ public class managerSound : MonoBehaviour
     {
         soundRebote.Play();
     }
+
+    public void buttonSettings()
+    {
+        soundButtonSettings.Play();
+    }
+
+    
     
 }

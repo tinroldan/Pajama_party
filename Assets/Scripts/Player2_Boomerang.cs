@@ -12,6 +12,7 @@ public class Player2_Boomerang : MonoBehaviour {
    
   
     void Start() {
+        myBoomerang.DeactiveColider += DeactivateCol;
         map_Manager = FindObjectOfType<Map_Manager>();
         myCollider = GetComponent<CapsuleCollider>();
         alive = true;
@@ -37,13 +38,11 @@ public class Player2_Boomerang : MonoBehaviour {
                 return;
             }
             else
-            {
-                myCollider.enabled = false;
-
+            { if (other.gameObject.GetComponent<Test_boomerang>().speed == 0) return;
+                DeactivateCol();
                 AnimatorController anim = GetComponent<AnimatorController>();
                 anim.Die();
                 alive = false;
-
                 // Modificaci n Jose
                 managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
                 manager.soundDie();
@@ -56,5 +55,8 @@ public class Player2_Boomerang : MonoBehaviour {
 
     void Activatecollider() {
         myCollider.enabled = true;
+    }
+    void DeactivateCol() {
+        myCollider.enabled = false;
     }
 }

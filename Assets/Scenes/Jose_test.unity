@@ -5800,6 +5800,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5354030582070099573, guid: 5fbc51c27e2082248844194774146aec, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 742441f3101b19643896d1e3c354d87b, type: 3}
     - target: {fileID: 5354030582610398045, guid: 5fbc51c27e2082248844194774146aec, type: 3}
       propertyPath: m_Name
       value: Sonidos (1)

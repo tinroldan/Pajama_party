@@ -44,8 +44,9 @@ public class PowerUps : MonoBehaviour
                         Destroy(this.gameObject);
                         break;
                     case 2:
+                        _player.teleportPU = true;
                         Destroy(this.gameObject);
-                        _player.TeleportButton.gameObject.SetActive(true);
+                        //_player.TeleportButton.gameObject.SetActive(true);
                         //_player.TeleportPowerUp();
                         break;
                     default:

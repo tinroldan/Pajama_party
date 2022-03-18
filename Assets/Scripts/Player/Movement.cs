@@ -19,14 +19,17 @@ public class Movement : MonoBehaviour
     //Modificaciones Chelo
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
-    [SerializeField] ParticleSystem ShieldPS, teleportPS;
+    [SerializeField] ParticleSystem ShieldPS;
+    [SerializeField] ParticleSystem teleportPS;
     public Button TeleportButton;
 
     public float shieldtime = 5f;
     public bool shieldActive = false;
     private bool firsttime = true;
+    [HideInInspector] public bool teleportPU = false;
 
     public GameObject playerBoomerang;
+    [SerializeField] public Test_boomerang myBoomerang;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -42,7 +45,7 @@ public class Movement : MonoBehaviour
         else running = false;
     }
     private void Update()
-    {      
+    {
         if (shieldActive)
         {
             if (firsttime)
@@ -84,10 +87,19 @@ public class Movement : MonoBehaviour
 
     public void TeleportPowerUp()
     {
-        transform.position = playerBoomerang.transform.position;
-        Instantiate(teleportPS, transform.position, Quaternion.identity);
-        teleportPS.gameObject.SetActive(true);
-        teleportPS.Play();
+        if (teleportPU)
+        {
+            if (myBoomerang.shooted)
+            {
+                if(playerBoomerang.transform.position.z > this.transform.position.z + 2 || playerBoomerang.transform.position.z < this.transform.position.z - 2)
+                {
+                    transform.position = playerBoomerang.transform.position;
+                    Instantiate(teleportPS, transform.position, Quaternion.identity);
+                    teleportPS.gameObject.SetActive(true);
+                    teleportPS.Play();
+                }
+            }
+        }
     }
 
     public void ShieldPowerUp()

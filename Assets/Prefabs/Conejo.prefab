@@ -1313,6 +1313,7 @@ MonoBehaviour:
   shieldtime: 5
   shieldActive: 0
   playerBoomerang: {fileID: 3696216730610801234}
+  myBoomerang: {fileID: 3696216730610801236}
 --- !u!114 &8160773541897997937
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1042,13 +1042,14 @@ MonoBehaviour:
   manager_Joystick: {fileID: 0}
   running: 0
   die: 0
-  Shield: {fileID: 0}
-  ShieldPS: {fileID: 0}
-  teleportPS: {fileID: 0}
+  Shield: {fileID: 2473383840059945301}
+  ShieldPS: {fileID: 5524945962503058904}
+  teleportPS: {fileID: 6402217574824790006}
   TeleportButton: {fileID: 0}
   shieldtime: 5
   shieldActive: 0
-  playerBoomerang: {fileID: 0}
+  playerBoomerang: {fileID: 151542333022479294}
+  myBoomerang: {fileID: 151542333022479288}
 --- !u!114 &6125437173339123445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1572,6 +1573,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6176683789784066778, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
   m_PrefabInstance: {fileID: 967926305260563757}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &6402217574824790006 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6176683789784066779, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
+  m_PrefabInstance: {fileID: 967926305260563757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4401141242869314460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1662,6 +1668,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8196397050778273347, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
   m_PrefabInstance: {fileID: 4401141242869314460}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &5524945962503058904 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196397050778273348, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
+  m_PrefabInstance: {fileID: 4401141242869314460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6125437173244800001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1749,9 +1760,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6276767002552405945, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
   m_PrefabInstance: {fileID: 6125437173244800001}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 151542333022479294}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf643c92760228e49a9c99d419d8ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &151542333022479294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6276767002552405951, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
+  m_PrefabInstance: {fileID: 6125437173244800001}
+  m_PrefabAsset: {fileID: 0}

@@ -741,13 +741,14 @@ MonoBehaviour:
   manager_Joystick: {fileID: 0}
   running: 0
   die: 0
-  Shield: {fileID: 0}
-  ShieldPS: {fileID: 0}
-  teleportPS: {fileID: 0}
+  Shield: {fileID: 3231091902658426325}
+  ShieldPS: {fileID: 2171021055240633795}
+  teleportPS: {fileID: 5934321414752912373}
   TeleportButton: {fileID: 0}
   shieldtime: 5
   shieldActive: 0
-  playerBoomerang: {fileID: 0}
+  playerBoomerang: {fileID: 4934337388809163171}
+  myBoomerang: {fileID: 4934337388809163173}
 --- !u!114 &3825955219943001267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,6 +1570,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6176683789784066778, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
   m_PrefabInstance: {fileID: 571126801525991726}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &5934321414752912373 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6176683789784066779, guid: e5a4acc9023f2c942bf173fdf818aedb, type: 3}
+  m_PrefabInstance: {fileID: 571126801525991726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1396617139261120028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1651,12 +1657,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6276767002846996733, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
   m_PrefabInstance: {fileID: 1396617139261120028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4934337388809163171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6276767002552405951, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
+  m_PrefabInstance: {fileID: 1396617139261120028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4934337388809163173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6276767002552405945, guid: f6f96d56d88e9564bb9d11b750a7348c, type: 3}
   m_PrefabInstance: {fileID: 1396617139261120028}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4934337388809163171}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf643c92760228e49a9c99d419d8ad4e, type: 3}
@@ -1747,6 +1758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
+--- !u!198 &2171021055240633795 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196397050778273348, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}
+  m_PrefabInstance: {fileID: 8042997467776564103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2171021055240633796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196397050778273347, guid: 1e158420bc3bec74aaa65e66b31c8be0, type: 3}

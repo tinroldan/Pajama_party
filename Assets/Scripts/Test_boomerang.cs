@@ -5,8 +5,9 @@ using UnityEngine;
 public class Test_boomerang : MonoBehaviour {
     public delegate void BoomerangEvents();
     public event BoomerangEvents Score;
+    public event BoomerangEvents DeactiveColider;
     Map_Manager map_Manager;
-    [SerializeField] float speed, speedRotation;
+    public float speed =30, speedRotation;
     float inicialSpeed;
     public Rigidbody rb;
     Vector3 dirVelocity;
@@ -15,6 +16,8 @@ public class Test_boomerang : MonoBehaviour {
     bool back, reflect = false;
     public bool shooted;
     float distance;
+
+   
 
     private void Awake() {
         map_Manager = FindObjectOfType<Map_Manager>();
@@ -26,6 +29,7 @@ public class Test_boomerang : MonoBehaviour {
     }
 
     private void Update() {
+       
         if (shooted) { //movimiento y distancia
             distance = Vector3.Distance(target.position, transform.position);
             //if (!reflect && !back) {
@@ -105,13 +109,15 @@ public class Test_boomerang : MonoBehaviour {
             manager.soundReboting();
             dirVelocity = Vector3.Reflect(dirVelocity, collision.GetContact(0).normal);
         } else if(collision.gameObject.CompareTag("Player")) {
+                  
             print("Matando a alguien");
+            //if (DeactiveColider != null) DeactiveColider();
             if (Score != null) Score();
         }
     }
-    void LookAtPlayer() {
-        Vector3 direction = target.position - transform.position;
-        Quaternion toRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speedRotation * Time.deltaTime);
-    }
+    //void LookAtPlayer() {
+    //    Vector3 direction = target.position - transform.position;
+    //    Quaternion toRotation = Quaternion.LookRotation(direction);
+    //    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speedRotation * Time.deltaTime);
+    //}
 }

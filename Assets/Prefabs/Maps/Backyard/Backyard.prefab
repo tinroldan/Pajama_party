@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1097748017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097748018}
+  - component: {fileID: 1097748019}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097748018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097748017}
+  m_LocalRotation: {x: 0.84524506, y: -0.15336163, z: 0.4425246, w: 0.25731885}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8538301851130307435}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 34.801, y: -234.57901, z: -177.8}
+--- !u!108 &1097748019
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097748017}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1586494086
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2686170559688819825}
   - component: {fileID: 3090131513090453566}
+  - component: {fileID: 6189677475403829550}
   m_Layer: 0
   m_Name: Wall2
   m_TagString: Obstacles
@@ -710,6 +804,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 21.26, z: 12.63}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6189677475403829550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511244257125739473}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2710424454966121339
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074165655798743581}
   - component: {fileID: 6917986663257812118}
+  - component: {fileID: 6189677475403829547}
   m_Layer: 0
   m_Name: Wall2 (3)
   m_TagString: Obstacles
@@ -835,6 +946,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 14.09, z: 12.63}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6189677475403829547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3226563740142018183}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &3530694801908873410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7594818366718939010}
   - component: {fileID: 6566013032533297789}
+  - component: {fileID: 6189677475403829549}
   m_Layer: 0
   m_Name: Wall2 (1)
   m_TagString: Obstacles
@@ -1071,6 +1199,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 21.26, z: 12.63}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6189677475403829549
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668901803202960976}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &4848242876767653247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5206322675893609775}
   - component: {fileID: 6232172810351543604}
+  - component: {fileID: 6189677475403829548}
   m_Layer: 0
   m_Name: Wall2 (2)
   m_TagString: Obstacles
@@ -1700,6 +1845,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 21.26, z: 12.63}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6189677475403829548
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809533563595150792}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &8108719916393938149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +2015,7 @@ Transform:
   - {fileID: 1182778036782177895}
   - {fileID: 3211708105887019149}
   - {fileID: 1586494087}
+  - {fileID: 1097748018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1949,6 +2111,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 944110724372606215, guid: 6f5402f3cfdb4044e89793dbcc7aade6, type: 3}
   m_PrefabInstance: {fileID: 511457247841755203}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8702330896632837977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9213780446177711898, guid: 6f5402f3cfdb4044e89793dbcc7aade6, type: 3}
+  m_PrefabInstance: {fileID: 511457247841755203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &6189677475403829553
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702330896632837977}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1001 &835038063851276852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2034,6 +2217,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8538301851130307435}
     m_Modifications:
+    - target: {fileID: 1112524374778756393, guid: 43bf6a8ceff2de14ea26d627e2148eba, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112524374778756393, guid: 43bf6a8ceff2de14ea26d627e2148eba, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1112524374778756823, guid: 43bf6a8ceff2de14ea26d627e2148eba, type: 3}
       propertyPath: m_Name
       value: Fountain - Base
@@ -2146,11 +2337,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea8bae61fb29f54693c7dfbbff661fb, type: 3}
+--- !u!1 &300014280823812582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2250793689764659064, guid: 5ea8bae61fb29f54693c7dfbbff661fb, type: 3}
+  m_PrefabInstance: {fileID: 1951661218071629470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8176281605808836510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7665774476111053056, guid: 5ea8bae61fb29f54693c7dfbbff661fb, type: 3}
   m_PrefabInstance: {fileID: 1951661218071629470}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &6189677475403829554
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300014280823812582}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1001 &6374840606947526598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2284,6 +2496,14 @@ PrefabInstance:
     - target: {fileID: 5456430889401677029, guid: 876e8517765536746a4e02123536d5fe, type: 3}
       propertyPath: m_Name
       value: Dog House
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456430889401677030, guid: 876e8517765536746a4e02123536d5fe, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456430889401677030, guid: 876e8517765536746a4e02123536d5fe, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 876e8517765536746a4e02123536d5fe, type: 3}

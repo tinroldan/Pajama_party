@@ -1388,6 +1388,7 @@ MonoBehaviour:
   shieldtime: 5
   shieldActive: 0
   playerBoomerang: {fileID: 1270026417904615804}
+  myBoomerang: {fileID: 1270026417904615802}
 --- !u!114 &8609298712194283168
 MonoBehaviour:
   m_ObjectHideFlags: 0

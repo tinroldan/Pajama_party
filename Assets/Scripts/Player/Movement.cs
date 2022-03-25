@@ -80,9 +80,9 @@ public class Movement : MonoBehaviour
     }
     public IEnumerator SpeedPowerUp()
     {
-        speed = speed * 1.5f;
+        speed = speed * 1.4f;
         yield return new WaitForSeconds(5f);
-        speed = speed / 1.5f;
+        speed = speed / 1.4f;
     }
 
     public void TeleportPowerUp()

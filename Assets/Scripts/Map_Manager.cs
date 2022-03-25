@@ -23,9 +23,10 @@ public class Map_Manager : MonoBehaviour {
         players= GameObject.FindGameObjectsWithTag("Player");
 
         change_mp = false;
+        winner = false;
     }
     private void FixedUpdate() {
-
+        Debug.Log(change_mp);
         if (Mov_Camera.local == false) {
             if (players_deaths == players.Length - 1 && counter == 0) {
                 counter = 1;
@@ -35,7 +36,7 @@ public class Map_Manager : MonoBehaviour {
         } else if (change_mp && counter == 1) {
             counter = 0;
             ChangeMap();
-        } else if (change_mp == false && counter == 0) {
+        } else if (change_mp == false) {
             counter = 1;
             DisableCanvas();
         } else return;

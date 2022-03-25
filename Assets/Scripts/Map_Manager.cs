@@ -15,7 +15,14 @@ public class Map_Manager : MonoBehaviour {
     [SerializeField] private GameObject score_panel;
 
     private void Start() {
-        players = GameObject.FindGameObjectsWithTag("Player");
+        //Instantiate(Save_Manager.saveManager.activeSave.character_1);
+        //Instantiate(Save_Manager.saveManager.activeSave.character_2);
+
+        ////players[1] =Save_Manager.saveManager.activeSave.character_1;
+        ////players[2] = Save_Manager.saveManager.activeSave.character_2;
+        players= GameObject.FindGameObjectsWithTag("Player");
+
+
     }
     private void FixedUpdate() {
 

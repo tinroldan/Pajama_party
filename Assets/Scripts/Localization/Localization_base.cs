@@ -43,6 +43,8 @@ public class Localization_base : MonoBehaviour
             { "customizacion","Customizacion" },
             { "pijama","Pijama" },
             { "Enter_room_name","Enter room name" },
+            { "nick_name","nickname" },
+            { "enter_your_name","Enter your nickname" },
 
 
     };
@@ -85,6 +87,9 @@ public class Localization_base : MonoBehaviour
             { "customizacion","Personalizacion" },
             { "pijama","Pijama" },
             { "Enter_room_name","Ingrese el nombre de la sala" },
+            { "nick_name","apodo" },
+            { "enter_your_name","Ingresa tu apodo" },
+
     };
 
 

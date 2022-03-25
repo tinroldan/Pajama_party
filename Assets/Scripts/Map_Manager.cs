@@ -16,10 +16,9 @@ public class Map_Manager : MonoBehaviour {
 
     private void Start() {
         players = GameObject.FindGameObjectsWithTag("Player");
-        change_mp = false;
     }
     private void FixedUpdate() {
-        Debug.Log(change_mp);
+
         if (Mov_Camera.local == false) {
             if (players_deaths == players.Length - 1 && counter == 0) {
                 counter = 1;
@@ -34,7 +33,6 @@ public class Map_Manager : MonoBehaviour {
             DisableCanvas();
         } else return;
 
-        
     }
 
     private void DisableCanvas() {
@@ -43,13 +41,13 @@ public class Map_Manager : MonoBehaviour {
                 players_deaths = 0;
                 counter = 0;
             }
-            score_panel?.SetActive(false);
+            score_panel.SetActive(false);
         }
     }
 
     private void ChangeMap() {
         if (Mapchanger != null) Mapchanger();
-        score_panel?.SetActive(true);
+        score_panel.SetActive(true);
         int rnd = Random.Range(0, maps.Length - 1);
         for (int i = 0; i < maps.Length; i++) {
             maps[i].SetActive(false);

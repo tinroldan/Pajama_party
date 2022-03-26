@@ -75,6 +75,20 @@ public class Movement : MonoBehaviour
         running = true;
         Vector3 force = new Vector3(x, 0, z);
         transform.position += force * speed*Time.deltaTime;
+        Vector3 mov_dir = new Vector3(x, z).normalized;
+        Vector3 target_pos = transform.position + mov_dir * speed * Time.deltaTime;
+        target_pos = new Vector3(target_pos.x, transform.position.y, target_pos.z);
+        RaycastHit raycastHit;
+        Physics.Raycast(transform.position, mov_dir* speed * Time.deltaTime, out raycastHit);
+        if (raycastHit.collider == null)
+        {
+            //Can move
+            transform.position = target_pos;
+        }
+        else
+        {
+            //Cannot move
+        }
 
         A_Move?.Invoke();
     }

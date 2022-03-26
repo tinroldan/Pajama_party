@@ -34,7 +34,15 @@ public class Dash : MonoBehaviour
         float start_time = Time.time;
         while (Time.time < start_time + dash_time)
         {
-            player.position += player.forward * dash_speed*Time.deltaTime;
+            Vector3 target_pos = transform.position + player.forward * dash_speed * Time.deltaTime;
+            target_pos = new Vector3(target_pos.x, transform.position.y, target_pos.z);
+            RaycastHit raycastHit;
+            Physics.Raycast(transform.position, player.forward * dash_speed * Time.deltaTime, out raycastHit,2f);
+            if (raycastHit.collider == null)
+            {
+                //Can move
+                transform.position = target_pos;
+            }
             yield return null;
         }
 

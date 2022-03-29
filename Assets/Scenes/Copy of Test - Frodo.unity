@@ -1118,7 +1118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8160773541897997903, guid: 9f4d91331cc4c66478deddecdc100fa6, type: 3}
       propertyPath: m_Name
-      value: Conejo
+      value: P2
       objectReference: {fileID: 0}
     - target: {fileID: 8160773541897997903, guid: 9f4d91331cc4c66478deddecdc100fa6, type: 3}
       propertyPath: m_IsActive

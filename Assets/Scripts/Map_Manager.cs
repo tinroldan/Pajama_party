@@ -25,13 +25,16 @@ public class Map_Manager : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         change_mp = false;
         winner = false;
-        if (players[0].gameObject.name == "P1") return;
-        else
+        if (Mov_Camera.local)
         {
-            GameObject temp = players[0];
-            players[0] = players[1];
-            players[1] = temp;
-        }
+            if (players[0].gameObject.name == "P1") return;
+            else
+            {
+                GameObject temp = players[0];
+                players[0] = players[1];
+                players[1] = temp;
+            }
+        } 
     }
     private void FixedUpdate()
     {

@@ -26,7 +26,6 @@ public class Map_Manager : MonoBehaviour {
         winner = false;
     }
     private void FixedUpdate() {
-        Debug.Log(change_mp);
         if (Mov_Camera.local == false) {
             if (players_deaths == players.Length - 1 && counter == 0) {
                 counter = 1;

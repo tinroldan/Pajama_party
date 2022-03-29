@@ -85,6 +85,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            //Cannot move horizontally
             Vector3 second_move_dir = new Vector3(0, 0, z);
             target_pos = transform.position + second_move_dir * speed * Time.deltaTime;
             Physics.Raycast(transform.position, second_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
@@ -94,6 +95,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
+                //Cannot move vertically
                 Vector3 third_move_dir = new Vector3(x, 0, 0);
                 target_pos = transform.position + third_move_dir * speed * Time.deltaTime;
                 Physics.Raycast(transform.position, third_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
@@ -101,9 +103,11 @@ public class Movement : MonoBehaviour
                 {
                     transform.position = target_pos;
                 }
+                else
+                {
+                    //Cannot move
+                }
             }
-            Debug.Log("No me muevo");
-            //Cannot move
         }
 
         A_Move?.Invoke();

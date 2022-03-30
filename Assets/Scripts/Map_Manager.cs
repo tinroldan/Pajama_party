@@ -40,8 +40,7 @@ public class Map_Manager : MonoBehaviour
     {
         if (Mov_Camera.local)
         {
-            if (players[0].gameObject.name == "P1") return;
-            else
+            if (players[0].gameObject.name != "P1")
             {
                 GameObject temp = players[0];
                 players[0] = players[1];

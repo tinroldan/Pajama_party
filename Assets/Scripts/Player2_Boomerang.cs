@@ -9,9 +9,11 @@ public class Player2_Boomerang : MonoBehaviour {
     Text myText;
     CapsuleCollider myCollider;
     Movement mov;
+    Rigidbody rb;
    
   
     void Start() {
+        rb = GetComponent<Rigidbody>();
         myBoomerang.DeactiveColider += DeactivateCol;
         map_Manager = FindObjectOfType<Map_Manager>();
         myCollider = GetComponent<CapsuleCollider>();
@@ -39,7 +41,9 @@ public class Player2_Boomerang : MonoBehaviour {
             }
             else
             { if (other.gameObject.GetComponent<Test_boomerang>().speed == 0) return;
-                DeactivateCol();
+                 
+                  DeactivateCol();
+                
                 AnimatorController anim = GetComponent<AnimatorController>();
                 anim.Die();
                 alive = false;
@@ -54,9 +58,12 @@ public class Player2_Boomerang : MonoBehaviour {
     }
 
     void Activatecollider() {
+        rb.useGravity = true;
         myCollider.enabled = true;
+
     }
     void DeactivateCol() {
+        rb.useGravity = false;
         myCollider.enabled = false;
     }
 }

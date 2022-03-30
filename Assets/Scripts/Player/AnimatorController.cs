@@ -38,6 +38,7 @@ public class AnimatorController : MonoBehaviour
     void Disable()
     {
         gameObject.SetActive(false);
+        if (anim.GetBool("Falling")) anim.SetBool("Falling", false);
         if (Mov_Camera.local)
         {
             Map_Manager.change_mp = true;
@@ -53,5 +54,14 @@ public class AnimatorController : MonoBehaviour
         gameObject.SetActive(true);
         anim.SetInteger("Animation_type", animation_type);
         Map_Manager.change_mp = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Water")
+        {
+            anim.SetBool("Falling", true);
+            mov.die = true;
+            Invoke("Disable", 2f);
+        }
     }
 }

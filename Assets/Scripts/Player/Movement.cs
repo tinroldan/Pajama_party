@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     [SerializeField]private float x_axis, z_axis;
     [SerializeField] ManagerJoystick manager_Joystick;
     public bool running, die;
+    [SerializeField] private LayerMask layermask_check;
 
     //Modificaciones Chelo
     [SerializeField] private GameObject Shield;
@@ -74,15 +75,48 @@ public class Movement : MonoBehaviour
     {
         running = true;
         Vector3 force = new Vector3(x, 0, z);
-        transform.position += force * speed*Time.deltaTime;
+        Vector3 target_pos = transform.position + force * speed * Time.deltaTime;
+        target_pos = new Vector3(target_pos.x, transform.position.y, target_pos.z);
+        RaycastHit raycastHit;
+        Physics.Raycast(transform.position, force, out raycastHit, 4*speed* Time.deltaTime);
+        if (raycastHit.collider == null)
+        {
+            transform.position = target_pos;
+        }
+        else
+        {
+            //Cannot move horizontally
+            Vector3 second_move_dir = new Vector3(0, 0, z);
+            target_pos = transform.position + second_move_dir * speed * Time.deltaTime;
+            Physics.Raycast(transform.position, second_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
+            if (raycastHit.collider == null)
+            {
+                transform.position = target_pos;
+            }
+            else
+            {
+                //Cannot move vertically
+                Vector3 third_move_dir = new Vector3(x, 0, 0);
+                target_pos = transform.position + third_move_dir * speed * Time.deltaTime;
+                Physics.Raycast(transform.position, third_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
+                if (raycastHit.collider == null)
+                {
+                    transform.position = target_pos;
+                }
+                else
+                {
+                    //Cannot move
+                }
+            }
+        }
 
         A_Move?.Invoke();
     }
     public IEnumerator SpeedPowerUp()
     {
-        speed = speed * 1.5f;
+        speed = speed * 1.4f;
         yield return new WaitForSeconds(5f);
-        speed = speed / 1.5f;
+        speed = speed / 1.4f;
     }
 
     public void TeleportPowerUp()

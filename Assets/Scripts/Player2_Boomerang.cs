@@ -58,12 +58,14 @@ public class Player2_Boomerang : MonoBehaviour {
     }
 
     void Activatecollider() {
-        rb.useGravity = true;
+        //rb.useGravity = true;
         myCollider.enabled = true;
+        rb.isKinematic = false;
 
     }
     void DeactivateCol() {
-        rb.useGravity = false;
+        //rb.useGravity = false;
+        rb.isKinematic = true;
         myCollider.enabled = false;
     }
 }

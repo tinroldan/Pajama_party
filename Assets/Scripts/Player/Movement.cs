@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
         target_pos = new Vector3(target_pos.x, transform.position.y, target_pos.z);
         RaycastHit raycastHit;
         Physics.Raycast(transform.position, force, out raycastHit, 4*speed* Time.deltaTime);
-        if (raycastHit.collider == null)
+        if (raycastHit.collider == null && Map_Manager.change_mp == false)
         {
             transform.position = target_pos;
         }
@@ -89,7 +89,7 @@ public class Movement : MonoBehaviour
             Vector3 second_move_dir = new Vector3(0, 0, z);
             target_pos = transform.position + second_move_dir * speed * Time.deltaTime;
             Physics.Raycast(transform.position, second_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
-            if (raycastHit.collider == null)
+            if (raycastHit.collider == null && Map_Manager.change_mp == false)
             {
                 transform.position = target_pos;
             }
@@ -99,7 +99,7 @@ public class Movement : MonoBehaviour
                 Vector3 third_move_dir = new Vector3(x, 0, 0);
                 target_pos = transform.position + third_move_dir * speed * Time.deltaTime;
                 Physics.Raycast(transform.position, third_move_dir, out raycastHit, 4 * speed * Time.deltaTime);
-                if (raycastHit.collider == null)
+                if (raycastHit.collider == null && Map_Manager.change_mp == false)
                 {
                     transform.position = target_pos;
                 }

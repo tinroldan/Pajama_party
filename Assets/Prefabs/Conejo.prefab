@@ -1292,6 +1292,9 @@ MonoBehaviour:
   manager_Joystick: {fileID: 0}
   running: 0
   die: 0
+  layermask_check:
+    serializedVersion: 2
+    m_Bits: 0
   Shield: {fileID: 8666743776319750368}
   ShieldPS: {fileID: 8423047970504450253}
   teleportPS: {fileID: 3912631158873263992}
@@ -1340,6 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfc2769450a2404d91f6c8b5b15ccf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorController: {fileID: 8160773541897997940}
   test_Boomerang: {fileID: 3696216730610801236}
   myScore: 0
 --- !u!136 &1035073059030131705

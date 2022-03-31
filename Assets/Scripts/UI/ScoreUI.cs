@@ -7,30 +7,26 @@ public class ScoreUI : MonoBehaviour {
     GameObject[] points = new GameObject[5];
     [SerializeField] GameObject reference;
     [SerializeField] Sprite paw;
+    [SerializeField] Sprite circle;
     [SerializeField] Score scoreScript;
     [SerializeField] GameObject winner, buttoms;
    
-
     private void Start() {
-
+        scoreScript.Substraction += SubstractionScore;
         for (int i = 0; i < points.Length; i++) {
             points[i] = Instantiate(reference, transform);
-
         }
-
-
     }
     private void Update() {
         if (gameObject) {
             for (int i = 0; i < scoreScript.myScore; i++) {
-                if(scoreScript.myScore >= 6) {//MACHEYTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+                if(scoreScript.myScore >= 6) {
                     for (int j = 0; j < 5; j++) {
                         points[j].GetComponent<Image>().sprite = paw;
                         points[j].GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1);
                     }
                     break;
                 }
-
                 points[i].GetComponent<Image>().sprite = paw;
                 points[i].GetComponent<RectTransform>().localScale = new Vector3(1.5f, 1.5f, 1);
             }
@@ -40,6 +36,11 @@ public class ScoreUI : MonoBehaviour {
                 buttoms.SetActive(true);
             }
         }
+    }
+
+    public void SubstractionScore() {
+        points[scoreScript.myScore].GetComponent<Image>().sprite = circle;
+        points[scoreScript.myScore].GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1);
     }
 
 }

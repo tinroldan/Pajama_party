@@ -737,7 +737,6 @@ GameObject:
   - component: {fileID: 5096812647966581319}
   - component: {fileID: 5096812647966581312}
   - component: {fileID: 5096812647966581313}
-  - component: {fileID: 5096812647966581318}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -809,19 +808,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5096812647966581318
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096812647966581316}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5290129863323134816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1373,7 @@ MonoBehaviour:
   TeleportButton: {fileID: 0}
   shieldtime: 5
   shieldActive: 0
+  teleportPU: 0
   playerBoomerang: {fileID: 1270026417904615804}
   myBoomerang: {fileID: 1270026417904615802}
 --- !u!114 &8609298712194283168

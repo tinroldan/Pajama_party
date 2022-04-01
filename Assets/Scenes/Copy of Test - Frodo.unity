@@ -726,6 +726,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 877974190}
     - target: {fileID: 3071937769937634978, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
+      propertyPath: circle
+      value: 
+      objectReference: {fileID: 21300000, guid: d24be0988742f0c4bb8b5793565b0942, type: 3}
+    - target: {fileID: 3071937769937634978, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
       propertyPath: winner
       value: 
       objectReference: {fileID: 1717978234}

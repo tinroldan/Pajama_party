@@ -125,7 +125,7 @@ public class Movement : MonoBehaviour
         {
             if (myBoomerang.shooted)
             {
-                if(playerBoomerang.transform.position.z > this.transform.position.z + 2 || playerBoomerang.transform.position.z < this.transform.position.z - 2)
+                if(playerBoomerang.transform.position.z > this.transform.position.z + 2 || playerBoomerang.transform.position.z < this.transform.position.z - 2 || playerBoomerang.transform.position.x > this.transform.position.x + 5 || playerBoomerang.transform.position.x < this.transform.position.x - 5)
                 {
                     transform.position = playerBoomerang.transform.position;
                     Instantiate(teleportPS, transform.position, Quaternion.identity);

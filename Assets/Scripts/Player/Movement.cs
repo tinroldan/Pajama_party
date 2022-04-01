@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     [SerializeField] ManagerJoystick manager_Joystick;
     public bool running, die;
     [SerializeField] private LayerMask layermask_check;
-
+    public static bool tpactive = false;
     //Modificaciones Chelo
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
@@ -127,6 +127,7 @@ public class Movement : MonoBehaviour
             {
                 if(playerBoomerang.transform.position.z > this.transform.position.z + 2 || playerBoomerang.transform.position.z < this.transform.position.z - 2 || playerBoomerang.transform.position.x > this.transform.position.x + 5 || playerBoomerang.transform.position.x < this.transform.position.x - 5)
                 {
+                    tpactive = true;
                     transform.position = playerBoomerang.transform.position;
                     Instantiate(teleportPS, transform.position, Quaternion.identity);
                     teleportPS.gameObject.SetActive(true);

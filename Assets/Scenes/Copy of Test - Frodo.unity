@@ -4848,6 +4848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1017473203532670118, guid: ce6a9da20ca94e2459d9284a17d9b750, type: 3}
+      propertyPath: local_game
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1017473203532670119, guid: ce6a9da20ca94e2459d9284a17d9b750, type: 3}
       propertyPath: m_RootOrder
       value: 12

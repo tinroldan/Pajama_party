@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
+    public delegate void AnimatorEvents();
+    public event AnimatorEvents Fall;
     Animator anim;
     Movement mov;
     [Range(0,1)]
@@ -58,7 +60,7 @@ public class AnimatorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Water")
-        {
+        {   if (Fall != null) Fall();
             anim.SetBool("Falling", true);
             mov.die = true;
             Invoke("Disable", 2f);

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6785847971018880786}
   - component: {fileID: 4125057788484835579}
   - component: {fileID: 7380350105124753638}
-  - component: {fileID: 2427772839864101288}
   - component: {fileID: 7067518382019689292}
+  - component: {fileID: 6953358879368443087}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Obstacles
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2427772839864101288
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7220946686882510542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: 24821322df8d6bc479170ba78ccffabb, type: 3}
 --- !u!54 &7067518382019689292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,3 +99,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!65 &6953358879368443087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220946686882510542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2759993, y: 5.9929476, z: 4.1112223}
+  m_Center: {x: 0, y: -0.20430756, z: 0.917612}

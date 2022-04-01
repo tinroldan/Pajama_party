@@ -4599,21 +4599,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 660532693022733088, guid: 4b8a9b30535790c478c02ace00009f42, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7364794804769279585, guid: 4b8a9b30535790c478c02ace00009f42, type: 3}
       propertyPath: m_Name
       value: City
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364794804769279585, guid: 4b8a9b30535790c478c02ace00009f42, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7870051746672398589, guid: 4b8a9b30535790c478c02ace00009f42, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7889973903535772891, guid: 4b8a9b30535790c478c02ace00009f42, type: 3}
       propertyPath: m_RootOrder

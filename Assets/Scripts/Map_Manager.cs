@@ -11,7 +11,7 @@ public class Map_Manager : MonoBehaviour
     public static bool winner;
     public static bool change_mp;
     [Range(0, 1)]
-    int counter;
+    int counter, current_map;
     public static int players_deaths;
     [SerializeField] private GameObject score_panel;
 
@@ -87,13 +87,14 @@ public class Map_Manager : MonoBehaviour
     {
         if (Mapchanger != null) Mapchanger();
         score_panel?.SetActive(true);
-        int rnd = Random.Range(0, maps.Length - 1);
+        current_map++;
         for (int i = 0; i < maps.Length; i++)
         {
             maps[i].SetActive(false);
         }
-        maps[rnd].SetActive(true);
-        Teleport_players(rnd);
+        if (current_map >= maps.Length) current_map = 0;
+        maps[current_map].SetActive(true);
+        Teleport_players(current_map);
     }
     private void Teleport_players(int rnd)
     {

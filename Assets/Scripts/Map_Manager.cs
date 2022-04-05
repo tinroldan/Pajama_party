@@ -79,6 +79,14 @@ public class Map_Manager : MonoBehaviour
                 players_deaths = 0;
                 counter = 0;
             }
+            else
+            {
+                for (int i = 0; i < players.Length; i++)
+                {
+                    players[i].gameObject.SetActive(true);
+                }
+            }
+     
             score_panel?.SetActive(false);
         }
     }

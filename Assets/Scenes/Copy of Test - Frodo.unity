@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66621673, g: 0.8827709, b: 0.8857476, a: 1}
+  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3832,6 +3832,7 @@ GameObject:
   - component: {fileID: 1666029705}
   - component: {fileID: 1666029704}
   - component: {fileID: 1666029706}
+  - component: {fileID: 1666029707}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3859,6 +3860,7 @@ MonoBehaviour:
   - {fileID: 3516797507325256242}
   - {fileID: 1717688671}
   - {fileID: 899740666}
+  current_map: 0
   score_panel: {fileID: 1568834045}
 --- !u!4 &1666029705
 Transform:
@@ -3892,6 +3894,20 @@ MonoBehaviour:
     character_1: {fileID: 0}
     character_2: {fileID: 0}
   loaded: 0
+--- !u!114 &1666029707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666029703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ea90eca9cca9340a0fdf89ffb45f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power_up: {fileID: 4549897864210367826, guid: 1af92a69eae7d4250a0ceefc4c224f5f, type: 3}
+  spawn_time: 10
 --- !u!1 &1672568692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4966,11 +4982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.995106
+      value: -57.8
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55198526
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.z

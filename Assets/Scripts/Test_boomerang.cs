@@ -98,9 +98,22 @@ public class Test_boomerang : MonoBehaviour {
         transform.position = spawn.position;
         gameObject.SetActive(false);
     }
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject == target.gameObject && back) { // jugador recoge boomerang
+
+    private void OnCollisionStay(Collision collision) {
+        if (collision.gameObject.CompareTag("Obstacles")) {
             PickUp();
+        }
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject == target.gameObject && back) {
+            if (back) { PickUp(); }
+            else if (Movement.tpactive==true){
+                Movement.tpactive = false;
+                return;
+            }
+
+                  // jugador recoge boomerang
+            
         } else if (collision.gameObject.CompareTag("Obstacles")) { //rebote Boomerang
             Return();
             reflect = true;
@@ -108,7 +121,9 @@ public class Test_boomerang : MonoBehaviour {
             managerSound manager = GameObject.Find("MainSound").GetComponent<managerSound>();
             manager.soundReboting();
             dirVelocity = Vector3.Reflect(dirVelocity, collision.GetContact(0).normal);
-        } else if(collision.gameObject.CompareTag("Player")) {
+
+        }
+        else if(collision.gameObject.CompareTag("Player")) {
                   
             print("Matando a alguien");
             //if (DeactiveColider != null) DeactiveColider();

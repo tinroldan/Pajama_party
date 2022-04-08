@@ -16,12 +16,13 @@ public class Movement : MonoBehaviour
     [SerializeField] ManagerJoystick manager_Joystick;
     public bool running, die;
     [SerializeField] private LayerMask layermask_check;
-
+    public static bool tpactive = false;
     //Modificaciones Chelo
     [SerializeField] private GameObject Shield;
     [Header("VFX")]
     [SerializeField] ParticleSystem ShieldPS;
     [SerializeField] ParticleSystem teleportPS;
+    [SerializeField] ParticleSystem movement_trail;
     public Button TeleportButton;
 
     public float shieldtime = 5f;
@@ -41,9 +42,14 @@ public class Movement : MonoBehaviour
         z_axis = manager_Joystick.InputVertical();
         if (x_axis != 0 || z_axis != 0)
         {
-            if(die == false) Change_Pos(x_axis, z_axis);
+            if (die == false) Change_Pos(x_axis, z_axis);
+            movement_trail.Play();
+
         }
-        else running = false;
+        else {
+            running = false;
+            movement_trail.Stop();
+        }
     }
     private void Update()
     {
@@ -127,6 +133,7 @@ public class Movement : MonoBehaviour
             {
                 if(playerBoomerang.transform.position.z > this.transform.position.z + 2 || playerBoomerang.transform.position.z < this.transform.position.z - 2 || playerBoomerang.transform.position.x > this.transform.position.x + 5 || playerBoomerang.transform.position.x < this.transform.position.x - 5)
                 {
+                    tpactive = true;
                     transform.position = playerBoomerang.transform.position;
                     Instantiate(teleportPS, transform.position, Quaternion.identity);
                     teleportPS.gameObject.SetActive(true);

@@ -1,1 +1,1 @@
-{"guardados":0,"character_1":{"instanceID":0},"character_2":{"instanceID":20072}}
+{"skin":{"instanceID":17726},"guardados":3,"character_1":{"instanceID":0},"character_2":{"instanceID":20072}}

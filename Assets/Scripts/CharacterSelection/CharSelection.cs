@@ -59,12 +59,12 @@ public class CharSelection : MonoBehaviour
         ShowPlayerFromList();
     }
 
-    public void SavePlayer(bool firstPlayer) {
-        if (firstPlayer) {
-            Save_Manager.saveManager.activeSave.character_1 = playerModels[currentPlayer].playerObject;
-        } else { Save_Manager.saveManager.activeSave.character_2 = playerModels[currentPlayer].playerObject; }
+    //public void SavePlayer(bool firstPlayer) { //REVISAR    
+    //    if (firstPlayer) {
+    //        Save_Manager.saveManager.activeSave.character_1 = playerModels[currentPlayer].playerObject;
+    //    } else { Save_Manager.saveManager.activeSave.character_2 = playerModels[currentPlayer].playerObject; }
 
-        Save_Manager.saveManager.Save();
-    }
+    //    Save_Manager.saveManager.Save();
+    //}
 
 }

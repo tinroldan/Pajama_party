@@ -40,7 +40,7 @@ public class ScoreUI : MonoBehaviour {
 
     public void SubstractionScore() {
         points[scoreScript.myScore].GetComponent<Image>().sprite = circle;
-        points[scoreScript.myScore].GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1);
+        points[scoreScript.myScore].GetComponent<RectTransform>().localScale = new Vector3(2.1f, 2f, 2);
     }
 
 }

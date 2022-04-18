@@ -2836,7 +2836,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.58
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4906,6 +4906,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5841760396994841263, guid: 7096d2857f748774fac5b922fbb97c5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7096d2857f748774fac5b922fbb97c5e, type: 3}
 --- !u!1001 &4454231135288642747
@@ -4976,6 +4980,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 330051468112859364, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5209,6 +5217,10 @@ PrefabInstance:
       value: Test_Dessert
       objectReference: {fileID: 0}
     - target: {fileID: 5571818295253530682, guid: f690fe979081ff64f9f823319dd12b1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811847646820781600, guid: f690fe979081ff64f9f823319dd12b1a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

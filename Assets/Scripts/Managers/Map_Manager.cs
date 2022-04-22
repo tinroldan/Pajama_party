@@ -11,7 +11,8 @@ public class Map_Manager : MonoBehaviour
     public static bool winner;
     public static bool change_mp;
     [Range(0, 1)]
-    int counter, current_map;
+    int counter; 
+    public int current_map;
     public static int players_deaths;
     [SerializeField] private GameObject score_panel;
 

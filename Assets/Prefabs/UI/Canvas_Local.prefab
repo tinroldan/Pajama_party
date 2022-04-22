@@ -4490,6 +4490,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2700080ee29554e4bb0ba64c886d2ae0, type: 3}
     - target: {fileID: 3071937770731641158, guid: 66d5d6a0166bc094c97e25bcf5c326a0, type: 3}
+      propertyPath: circle
+      value: 
+      objectReference: {fileID: 21300000, guid: a3002abaf343549088d175cb113b8ae7, type: 3}
+    - target: {fileID: 3071937770731641158, guid: 66d5d6a0166bc094c97e25bcf5c326a0, type: 3}
       propertyPath: winner
       value: 
       objectReference: {fileID: 1407932795}
@@ -4501,6 +4505,10 @@ PrefabInstance:
       propertyPath: scoreScript
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4938323320254813612, guid: 66d5d6a0166bc094c97e25bcf5c326a0, type: 3}
+      propertyPath: circle
+      value: 
+      objectReference: {fileID: 21300000, guid: a3002abaf343549088d175cb113b8ae7, type: 3}
     - target: {fileID: 4938323320254813612, guid: 66d5d6a0166bc094c97e25bcf5c326a0, type: 3}
       propertyPath: winner
       value: 

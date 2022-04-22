@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66621673, g: 0.8827709, b: 0.8857476, a: 1}
+  m_IndirectSpecularColor: {r: 0.66621685, g: 0.8827709, b: 0.8857476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -728,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 3071937769937634978, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
       propertyPath: circle
       value: 
-      objectReference: {fileID: 21300000, guid: d24be0988742f0c4bb8b5793565b0942, type: 3}
+      objectReference: {fileID: 21300000, guid: 0be6a64274789ca41b7983d14185454a, type: 3}
     - target: {fileID: 3071937769937634978, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
       propertyPath: winner
       value: 
@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.4528302
       objectReference: {fileID: 0}
+    - target: {fileID: 4938323321037867592, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
+      propertyPath: circle
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be6a64274789ca41b7983d14185454a, type: 3}
     - target: {fileID: 4938323321037867592, guid: b6b9257ffd342d240aaeb96588765798, type: 3}
       propertyPath: winner
       value: 
@@ -2836,7 +2840,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.58
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3832,6 +3836,7 @@ GameObject:
   - component: {fileID: 1666029705}
   - component: {fileID: 1666029704}
   - component: {fileID: 1666029706}
+  - component: {fileID: 1666029707}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3859,6 +3864,7 @@ MonoBehaviour:
   - {fileID: 3516797507325256242}
   - {fileID: 1717688671}
   - {fileID: 899740666}
+  current_map: 0
   score_panel: {fileID: 1568834045}
 --- !u!4 &1666029705
 Transform:
@@ -3888,10 +3894,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSave:
-    guardados: 0
-    character_1: {fileID: 0}
-    character_2: {fileID: 0}
+    character_1: 00000000
+    character_2: 00000000
+    onlineCharacter: 000000000000000000000000
   loaded: 0
+--- !u!114 &1666029707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666029703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ea90eca9cca9340a0fdf89ffb45f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power_up: {fileID: 4549897864210367826, guid: 1af92a69eae7d4250a0ceefc4c224f5f, type: 3}
+  spawn_time: 10
 --- !u!1 &1672568692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +4910,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5841760396994841263, guid: 7096d2857f748774fac5b922fbb97c5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7096d2857f748774fac5b922fbb97c5e, type: 3}
 --- !u!1001 &4454231135288642747
@@ -4960,17 +4984,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 330051468112859364, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.995106
+      value: -57.8
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55198526
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8538301851130307435, guid: 38255a0d6c029aa4984b681c1deb96c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5193,6 +5221,10 @@ PrefabInstance:
       value: Test_Dessert
       objectReference: {fileID: 0}
     - target: {fileID: 5571818295253530682, guid: f690fe979081ff64f9f823319dd12b1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811847646820781600, guid: f690fe979081ff64f9f823319dd12b1a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

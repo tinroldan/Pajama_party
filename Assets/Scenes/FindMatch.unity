@@ -8301,6 +8301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customise_Manager: {fileID: 1764334931}
+  launcher: {fileID: 446591041}
+  skin: {fileID: 0}
 --- !u!114 &1635247177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8315,9 +8317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSave:
     online: 0
-    character_1: 000000000000000000000000
-    character_2: 000000000000000000000000
-    onlineCharacter: 000000000000000000000000
+    character_1: 
+    character_2: 
+    onlineCharacter: 
   loaded: 0
 --- !u!1 &1636667689
 GameObject:

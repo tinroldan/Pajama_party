@@ -6,9 +6,10 @@ public class Save_System : MonoBehaviour
 {
    [SerializeField] Customise_Manager customise_Manager;
     [SerializeField] Launcher launcher;
+    [SerializeField] Online_skin skin;
     void Start() {
         customise_Manager.SaveT += Transformation;
-        launcher.GameStart += ;
+        launcher.GameStart +=LoadCharacter;
     }
 
     public void Transformation(int player,Online_skin skin) {
@@ -27,6 +28,7 @@ public class Save_System : MonoBehaviour
      
     public void LoadCharacter() {
         Save_Manager.saveManager.Load();
+       
         
     }
 }

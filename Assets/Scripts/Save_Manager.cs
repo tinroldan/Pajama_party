@@ -77,11 +77,11 @@ public class Save_Manager : MonoBehaviour {
             string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
             SaveData saveData = JsonUtility.FromJson<SaveData>(saveString);
      
-                //activeSave.character_1 = saveData.character_1;
+                activeSave.character_1 = saveData.character_1;
   
-                //activeSave.character_2 = saveData.character_2;
+                activeSave.character_2 = saveData.character_2;
   
-                //activeSave.onlineCharacter = saveData.onlineCharacter;
+                activeSave.onlineCharacter = saveData.onlineCharacter;
             
            
             loaded = true;

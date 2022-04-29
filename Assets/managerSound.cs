@@ -67,10 +67,10 @@ public class managerSound : MonoBehaviour
         soundRebote.Play();
     }
 
-    public void buttonSettings()
-    {
-        soundButtonSettings.Play();
-    }
+    /* public void buttonSettings()
+     {
+         soundButtonSettings.Play();
+     }*/
 
     public void muteSettings()
     {

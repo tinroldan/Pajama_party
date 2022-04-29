@@ -7,7 +7,7 @@ using System;
 
 public class Save_Manager : MonoBehaviour {
     public static Save_Manager saveM_instance;
-    [SerializeField] Online_skin skinOnline, skinPlayer1, skinPlayer2;
+    [SerializeField] SkinData skinOnline, skinPlayer1, skinPlayer2;
 
     public SaveData activeSave;
     public bool loaded;
@@ -70,12 +70,12 @@ public class Save_Manager : MonoBehaviour {
     //    }
     //}
     public void Save() {
-        if (activeSave.online) {
+        //if (activeSave.online) {
             activeSave.onlineCharacter =skinOnline.SaveCharacter();
-        } else {
+        //} else {
             activeSave.character_1 = skinPlayer1.SaveCharacter();
             activeSave.character_2 = skinPlayer2.SaveCharacter();
-        }
+        //}
 
         string json = JsonUtility.ToJson(activeSave);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
@@ -88,18 +88,18 @@ public class Save_Manager : MonoBehaviour {
 
             string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
             SaveData saveData = JsonUtility.FromJson<SaveData>(saveString);
-            activeSave.online = saveData.online;
+            //activeSave.online = saveData.online;
             activeSave.character_1 = saveData.character_1;
 
             activeSave.character_2 = saveData.character_2;
 
             activeSave.onlineCharacter = saveData.onlineCharacter;
-            if (activeSave.online) {
+            //if (activeSave.online) {
                 skinOnline.LoadCharacter(activeSave.onlineCharacter);
-            } else {
+            //} else {
                 skinPlayer1.LoadCharacter(activeSave.character_1);
                 skinPlayer2.LoadCharacter(activeSave.character_2);
-            }
+            //}
 
 
             loaded = true;
@@ -119,7 +119,7 @@ public class Save_Manager : MonoBehaviour {
 public class SaveData {
     // public Online_skin skin;
     //public int guardados;
-    public bool online;
+    //public bool online;
     public int[] character_1 = new int[4];
     public int[] character_2 = new int[4];
     public int[] onlineCharacter = new int[4];

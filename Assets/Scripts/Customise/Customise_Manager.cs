@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Customise_Manager : MonoBehaviour {
-    public delegate void SaveTransformation(int a, Online_skin skin);
+    public delegate void SaveTransformation(int a, SkinData skin);
     public event SaveTransformation SaveT;
     [SerializeField]
     GameObject[] buttonsCharacters, buttonsPijamas, buttonsBoomerangs;
     [SerializeField]
-    Online_skin skin;
+    SkinData skin;
 
     [SerializeField]
     Image faceImage, pijamaImage,boomerangImg;
@@ -22,9 +22,17 @@ public class Customise_Manager : MonoBehaviour {
     [SerializeField]
     Sprite[] pijamas;
 
-
+    private void OnEnable()
+    {
+        Save_Manager.saveM_instance.Load();
+        faceImage.sprite = faces[skin.face];
+        boomerangImg.sprite = boomerangs[skin.boomerang];
+        pijamaImage.sprite = pijamas[skin.pijama];
+        UpdateButtons();
+    }
     void Start()
     {
+        Save_Manager.saveM_instance.Load();
         faceImage.sprite = faces[skin.face];
         boomerangImg.sprite = boomerangs[skin.boomerang];
         pijamaImage.sprite = pijamas[skin.pijama];
@@ -54,9 +62,8 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.face = face;
         faceImage.sprite = faces[skin.face];
-        
-       
-       
+
+        Save_Manager.saveM_instance.Save();
         UpdateButtons();
     }
 
@@ -64,7 +71,8 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.pijama = pijama;
         pijamaImage.sprite = pijamas[skin.pijama];
-        
+        Save_Manager.saveM_instance.Save();
+
         UpdateButtons();
     }
 
@@ -72,7 +80,8 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.boomerang = boomerang;
         boomerangImg.sprite = boomerangs[skin.boomerang];
-       
+        Save_Manager.saveM_instance.Save();
+
         UpdateButtons();
     }
 

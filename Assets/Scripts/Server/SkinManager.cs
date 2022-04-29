@@ -52,14 +52,12 @@ public class SkinManager : MonoBehaviour
         pv = GetComponent<PhotonView>();
     }
 
-    
+
     void Start()
     {
         if (pv.IsMine)
         {
             Save_Manager.saveM_instance.Load();
-
-
             pv.RPC("LoadSkin", RpcTarget.All, 2);
         }
 
@@ -68,6 +66,8 @@ public class SkinManager : MonoBehaviour
     [PunRPC]
     void LoadSkin(int num)
     {
+        if (pv.IsMine)
+        {
             m_meshRend_face.sharedMesh = (m_faceList[m_skin.face].m_mesh);
             m_meshRend_body.sharedMesh = (m_bodyList[m_skin.pijama].m_mesh);
             m_meshRend_tail.sharedMesh = (m_tailList[m_skin.face].m_mesh);
@@ -76,6 +76,7 @@ public class SkinManager : MonoBehaviour
             m_meshRend_face.materials = (m_faceList[m_skin.face].m_material);
             m_meshRend_body.materials = (m_bodyList[m_skin.pijama].m_material);
             m_meshRend_tail.materials = (m_tailList[m_skin.face].m_material);
+        }
 
     }
 

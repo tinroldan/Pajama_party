@@ -944,6 +944,7 @@ GameObject:
   - component: {fileID: 3835622584111179515}
   - component: {fileID: 3835622584111179514}
   - component: {fileID: 7656525052012219888}
+  - component: {fileID: 3660485345857966563}
   m_Layer: 0
   m_Name: Player_Master
   m_TagString: Player
@@ -1725,6 +1726,49 @@ MonoBehaviour:
     - {x: 0.7063923, y: 0.04494747, z: 0.706392}
     - {x: 0.34110048, y: 0.6646991, z: 0.6646996}
     - {x: 0.17692533, y: 0.69595146, z: 0.6959518}
+--- !u!114 &3660485345857966563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835622584111179516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ffa6abe85895428d32842fcdb5091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_skin: {fileID: 11400000, guid: bec629cda33aeaa4ea5ab91c35a02ad5, type: 2}
+  m_meshRend_face: {fileID: 6634640805016508317}
+  m_meshRend_body: {fileID: 446528425399058598}
+  m_meshRend_tail: {fileID: 6625427908046342521}
+  m_faceList:
+  - m_mesh: {fileID: -116722914964252808, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: 1986673747869156970, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: 5740321770900251297, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: -5301333844116955513, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  m_bodyList:
+  - m_mesh: {fileID: 4245214285347242441, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: -631162634634800220, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: -3179560966018163546, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: 5828280214069511035, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  m_tailList:
+  - m_mesh: {fileID: -339383069495065016, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: 838129468025685523, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: -5884451543043196155, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
+  - m_mesh: {fileID: 5679111091736729755, guid: e508d2eec3d29e04b92701e53e588cb3, type: 3}
+    m_material: {fileID: 0}
 --- !u!1 &3944852265731863328
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: onlineSkin
   m_EditorClassIdentifier: 
   face: 0
-  pijama: 2
+  pijama: 3
   boomerang: 3
   player: 2

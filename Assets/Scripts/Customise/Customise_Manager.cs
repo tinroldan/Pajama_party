@@ -20,14 +20,14 @@ public class Customise_Manager : MonoBehaviour {
     [SerializeField]
     Sprite[] boomerangs;
     [SerializeField]
-    Color[] pijamas;
+    Sprite[] pijamas;
 
 
     void Start()
     {
         faceImage.sprite = faces[skin.face];
         boomerangImg.sprite = boomerangs[skin.boomerang];
-        pijamaImage.color = pijamas[skin.pijama];
+        pijamaImage.sprite = pijamas[skin.pijama];
         UpdateButtons();
     }
 
@@ -63,7 +63,7 @@ public class Customise_Manager : MonoBehaviour {
     public void selectPijama(int pijama)
     {
         skin.pijama = pijama;
-        pijamaImage.color = pijamas[skin.pijama];
+        pijamaImage.sprite = pijamas[skin.pijama];
         
         UpdateButtons();
     }

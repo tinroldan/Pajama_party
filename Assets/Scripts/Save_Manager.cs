@@ -70,7 +70,12 @@ public class Save_Manager : MonoBehaviour {
     //    }
     //}
     public void Save() {
-
+        if (activeSave.online) {
+            activeSave.onlineCharacter =skinOnline.SaveCharacter();
+        } else {
+            activeSave.character_1 = skinPlayer1.SaveCharacter();
+            activeSave.character_2 = skinPlayer2.SaveCharacter();
+        }
 
         string json = JsonUtility.ToJson(activeSave);
         File.WriteAllText(Application.dataPath + "/save.txt", json);

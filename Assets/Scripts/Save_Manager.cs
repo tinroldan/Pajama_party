@@ -6,12 +6,18 @@ using System.Collections.Generic;
 using System;
 
 public class Save_Manager : MonoBehaviour {
-    public static Save_Manager saveManager;
+    public static Save_Manager saveM_instance;
+   
     public SaveData activeSave;
     public bool loaded;
 
     private void Awake() {
-        saveManager = this;
+        if (saveM_instance == null) {
+            saveM_instance = this;
+        }else if(saveM_instance != null) {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
         Load();
 
 

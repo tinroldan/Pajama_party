@@ -387,7 +387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6609354582096519414}
   - component: {fileID: 1467403697791438260}
-  - component: {fileID: 4962921641763065395}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -485,28 +484,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00022792816, y: 1.2612782, z: 0.112674415}
     m_Extent: {x: 2.24652, y: 2.540951, z: 1.0118396}
   m_DirtyAABB: 0
---- !u!114 &4962921641763065395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582608966756679575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1821125718961419816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6852789391301683002}
   - component: {fileID: 5304430345628501099}
-  - component: {fileID: 3845908358344796267}
   m_Layer: 0
   m_Name: Tail
   m_TagString: Untagged
@@ -1262,28 +1238,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00002168119, y: 0.23630315, z: -1.464145}
     m_Extent: {x: 0.29512328, y: 0.41851723, z: 0.7699611}
   m_DirtyAABB: 0
---- !u!114 &3845908358344796267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3187734020951910185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &3781200223254852744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +1962,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1945814789110228538}
   - component: {fileID: 5655916910838061711}
-  - component: {fileID: 189613871823867381}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -2092,28 +2045,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.061053514, y: 1.0651407, z: 0.8574361}
     m_Extent: {x: 0.8142525, y: 0.5727968, z: 0.33918995}
   m_DirtyAABB: 0
---- !u!114 &189613871823867381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5538496125136458328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &5792644414869629248
 GameObject:
   m_ObjectHideFlags: 0

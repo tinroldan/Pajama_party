@@ -49,8 +49,7 @@ public class SkinManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        Save_Manager.saveM_instance.Load();
-        LoadMesh();
+        
         pv = GetComponent<PhotonView>();
     }
 
@@ -60,6 +59,8 @@ public class SkinManager : MonoBehaviourPunCallbacks
         if (pv.IsMine)
         {
             //pv.RPC("LoadMesh", RpcTarget.All, this.gameObject.GetPhotonView().ViewID);
+            Save_Manager.saveM_instance.Load();
+            LoadMesh();
         }
 
     }

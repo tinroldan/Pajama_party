@@ -58,7 +58,7 @@ public class SkinManager : MonoBehaviour
         if (pv.IsMine)
         {
             Save_Manager.saveM_instance.Load();
-            pv.RPC("LoadSkin", RpcTarget.All, 2);
+            pv.RPC("LoadSkin", RpcTarget.Others, 2);
         }
 
     }
@@ -66,7 +66,7 @@ public class SkinManager : MonoBehaviour
     [PunRPC]
     void LoadSkin(int num)
     {
-        if (pv.IsMine)
+        //if (pv.IsMine)
         {
             m_meshRend_face.sharedMesh = (m_faceList[m_skin.face].m_mesh);
             m_meshRend_body.sharedMesh = (m_bodyList[m_skin.pijama].m_mesh);

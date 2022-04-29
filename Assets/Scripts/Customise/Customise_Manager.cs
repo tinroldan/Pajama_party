@@ -54,7 +54,7 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.face = face;
         faceImage.sprite = faces[skin.face];
-        if (SaveT != null) SaveT(skin.player, skin);
+        
        
        
         UpdateButtons();
@@ -64,7 +64,7 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.pijama = pijama;
         pijamaImage.color = pijamas[skin.pijama];
-        if (SaveT != null) SaveT(skin.player, skin);
+        
         UpdateButtons();
     }
 
@@ -72,7 +72,7 @@ public class Customise_Manager : MonoBehaviour {
     {
         skin.boomerang = boomerang;
         boomerangImg.sprite = boomerangs[skin.boomerang];
-        if (SaveT != null) SaveT(skin.player, skin);
+       
         UpdateButtons();
     }
 

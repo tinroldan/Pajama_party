@@ -8231,8 +8231,6 @@ GameObject:
   - component: {fileID: 1635247175}
   - component: {fileID: 1635247174}
   - component: {fileID: 1635247173}
-  - component: {fileID: 1635247177}
-  - component: {fileID: 1635247176}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -8288,39 +8286,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1635247176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635247172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9fff34402d712469a54bab3582b555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customise_Manager: {fileID: 1764334931}
-  launcher: {fileID: 446591041}
-  skin: {fileID: 0}
---- !u!114 &1635247177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635247172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f0d1006d681c442b7f2874341bc728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeSave:
-    online: 0
-    character_1: 
-    character_2: 
-    onlineCharacter: 
-  loaded: 0
 --- !u!1 &1636667689
 GameObject:
   m_ObjectHideFlags: 0

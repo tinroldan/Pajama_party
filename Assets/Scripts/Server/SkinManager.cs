@@ -58,23 +58,29 @@ public class SkinManager : MonoBehaviourPunCallbacks
     {
         if (pv.IsMine)
         {
-            //pv.RPC("LoadMesh", RpcTarget.All, this.gameObject.GetPhotonView().ViewID);
             Save_Manager.saveM_instance.Load();
-            LoadMesh();
+            pv.RPC("LoadMesh", RpcTarget.All, m_meshRend_body);
+            //LoadMesh();
         }
 
     }
 
-    //[PunRPC]
-    void LoadMesh()
+   
+
+    [PunRPC]
+    void LoadMesh(SkinnedMeshRenderer meshS)
     {
-        //if (!pv.IsMine)
-        //    return;
+        if (!pv.IsMine)
+            return;
 
         //PhotonView targetPV = PhotonView.Find(targetPropID);
 
         //if (targetPV.gameObject == null)
         //    return;
+
+        meshS.sharedMesh = (m_bodyList[m_skin.pijama].m_mesh);
+        meshS.materials = (m_bodyList[m_skin.pijama].m_material);
+
 
         m_meshRend_face.sharedMesh = (m_faceList[m_skin.face].m_mesh);
         m_meshRend_body.sharedMesh = (m_bodyList[m_skin.pijama].m_mesh);

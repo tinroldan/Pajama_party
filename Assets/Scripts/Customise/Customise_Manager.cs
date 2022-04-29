@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Customise_Manager : MonoBehaviour {
-    public delegate void SaveTransformation(int a, Online_skin skin);
+    public delegate void SaveTransformation(int a, SkinData skin);
     public event SaveTransformation SaveT;
     [SerializeField]
     GameObject[] buttonsCharacters, buttonsPijamas, buttonsBoomerangs;
     [SerializeField]
-    Online_skin skin;
+    SkinData skin;
 
     [SerializeField]
     Image faceImage, pijamaImage,boomerangImg;

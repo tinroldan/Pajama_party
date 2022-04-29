@@ -7,7 +7,7 @@ using System;
 
 public class Save_Manager : MonoBehaviour {
     public static Save_Manager saveM_instance;
-    [SerializeField] Online_skin skinOnline, skinPlayer1, skinPlayer2;
+    [SerializeField] SkinData skinOnline, skinPlayer1, skinPlayer2;
 
     public SaveData activeSave;
     public bool loaded;

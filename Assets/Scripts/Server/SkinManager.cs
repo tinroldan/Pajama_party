@@ -32,7 +32,7 @@ public class BoomerangOBJ
 
 public class SkinManager : MonoBehaviour
 {
-    [SerializeField] Online_skin m_skin;
+    [SerializeField] SkinData m_skin;
 
     [SerializeField] SkinnedMeshRenderer m_meshRend_face;
     [SerializeField] SkinnedMeshRenderer m_meshRend_body;

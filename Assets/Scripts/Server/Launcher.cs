@@ -8,8 +8,8 @@ using Photon.Realtime;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
-
-
+   
+    
     public static Launcher Instance;
 
     [SerializeField] TMP_InputField roomNameInpuField;
@@ -66,7 +66,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
 
     }
-    
 
     public void CreateRoom()
     {
@@ -112,7 +111,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
 
     public void StartGame()
-    {
+    {  
         PhotonNetwork.LoadLevel(1);
     }
 

@@ -68,7 +68,7 @@ public class SkinManager : MonoBehaviourPunCallbacks
    
 
     [PunRPC]
-    public void LoadMesh(/*SkinnedMeshRenderer meshS*/)
+    void LoadMesh(/*SkinnedMeshRenderer meshS*/)
     {
         //if (!pv.IsMine)
         //    return;
